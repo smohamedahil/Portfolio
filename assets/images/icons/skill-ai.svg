@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="aiMainGrad" x1="6" y1="4" x2="36" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="40%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="aiStarGrad" x1="27" y1="3" x2="45" y2="21" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5B5B"/>
+      <stop offset="100%" stop-color="#FF014F"/>
+    </linearGradient>
+  </defs>
+  <!-- Primary Large AI Sparkle Star -->
+  <path d="M20 4C20 13.5 25 24 34 24C25 24 20 34.5 20 44C20 34.5 15 24 6 24C15 24 20 13.5 20 4Z" fill="url(#aiMainGrad)"/>
+  
+  <!-- Secondary Top-Right Sparkle -->
+  <path d="M36 3C36 7.5 38.5 12 45 12C38.5 12 36 16.5 36 21C36 16.5 33.5 12 27 12C33.5 12 36 7.5 36 3Z" fill="url(#aiStarGrad)"/>
+  
+  <!-- Tertiary Small Accent Sparkle -->
+  <path d="M35 30C35 32.5 36.5 34.5 39.5 34.5C36.5 34.5 35 36.5 35 39C35 36.5 33.5 34.5 30.5 34.5C33.5 34.5 35 32.5 35 30Z" fill="#38BDF8"/>
+  
+  <!-- Center Bright Core -->
+  <circle cx="20" cy="24" r="3" fill="#FFFFFF"/>
+</svg>

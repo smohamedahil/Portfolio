@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="I'm Mohamed Ahil, a Web Developer with 2+ years of experience building, customizing, and maintaining responsive websites and eCommerce experiences.">
+    <link rel="shortcut icon" type="image/png" href="assets/images/banner/ahil-logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/banner/ahil-logo.png">
+    <link rel="apple-touch-icon" href="assets/images/banner/ahil-logo.png">
+    <title>Mohamed Ahil - Web Developer | Personal Portfolio</title>
+    <!-- Bootstrap min css -->
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <style>
+        .header-one .header-content .logo img,
+        .tmp-sidebar-area .logo img,
+        .tmp-popup-mobile-menu .logo img,
+        .single-footer-wrapper .logo img {
+            max-width: max-content;
+            width: 237px;
+        }
+
+        .my-skill-area-style-two .card-icon img {
+            filter: none;
+            max-height: 40px;
+            max-width: 40px;
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .my-skill-card-style-two .my-skill-card .card-icon {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .my-skill-card-style-two .my-skill-card:hover .card-icon {
+            border-color: var(--color-primary);
+            background: rgba(255, 1, 79, 0.12);
+            box-shadow: 0 0 20px rgba(255, 1, 79, 0.28);
+            transform: scale(1.06);
+        }
+
+        .my-skill-card-style-two .my-skill-card {
+            height: 100%;
+        }
+
+        .my-skill-card-style-two .my-skill-card .card-title {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        /* Resume Section (Experience & Education) - Clean Container & Subtle Theme-Red Card Pattern */
+        .resume-section {
+            position: relative;
+            padding-bottom: 120px;
+        }
+
+        @media (max-width: 991px) {
+            .resume-section {
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .resume-section {
+                padding-bottom: 60px;
+            }
+        }
+
+        .resume-section .col-md-6 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resume-widget {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 24px;
+        }
+
+        .resume-widget .resume-single::after,
+        .resume-widget .resume-single::before {
+            display: none !important;
+            filter: none !important;
+            opacity: 0 !important;
+        }
+
+        .resume-widget .resume-single {
+            position: relative;
+            background-color: #141416;
+            background-image:
+                radial-gradient(circle at 100% 100%, rgba(255, 1, 79, 0.14) 0%, transparent 60%),
+                url('assets/images/bg/card-pattern-corner.svg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: right bottom, right bottom;
+            background-size: 240px 240px, 170px 170px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 0 !important;
+            flex: 1 1 0%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            overflow: hidden;
+        }
+
+        .resume-widget .resume-single:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px -10px rgba(255, 1, 79, 0.28);
+            background-image:
+                radial-gradient(circle at 100% 100%, rgba(255, 1, 79, 0.25) 0%, transparent 65%),
+                url('assets/images/bg/card-pattern-corner.svg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: right bottom, right bottom;
+            background-size: 260px 260px, 175px 175px;
+        }
+
+        .resume-widget .resume-single .time {
+            color: var(--color-primary) !important;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .resume-widget .resume-single .time i {
+            color: var(--color-primary) !important;
+            --fa-primary-color: var(--color-primary);
+            --fa-secondary-color: var(--color-primary);
+        }
+
+        .resume-widget .resume-single .resume-title {
+            color: var(--color-white);
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            text-transform: none !important;
+            margin-bottom: 4px;
+        }
+
+        .resume-widget .resume-single .institute {
+            color: #d0d0d0;
+            font-family: var(--font-secondary);
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .resume-widget .resume-single .card-para {
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-top: 10px;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .resume-section .section-title {
+            color: var(--color-white);
+            font-family: var(--font-primary);
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .resume-section .section-title i {
+            color: var(--color-primary) !important;
+            --fa-primary-color: var(--color-primary);
+            --fa-secondary-color: var(--color-primary);
+            margin-right: 12px;
+        }
+
+        /* Equalize all 4 project images to exact same uniform size & proportions */
+        .latest-portfolio-card .portfoli-card-img .img-box {
+            position: relative;
+            width: 100%;
+            height: 380px !important;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .latest-portfolio-card .portfoli-card-img .img-box a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .latest-portfolio-card .portfoli-card-img .img-box img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            border-radius: 16px !important;
+        }
+
+        @media (max-width: 991px) {
+            .latest-portfolio-card .portfoli-card-img .img-box {
+                height: 300px !important;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .latest-portfolio-card .portfoli-card-img .img-box {
+                height: 220px !important;
+            }
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap .content-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap .tmp-arrow-icon-btn {
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .latest-portfolio-card .portfolio-card-desc {
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .latest-portfolio-card .portfolio-card-title a {
+            transition: color 0.3s ease;
+        }
+
+        .latest-portfolio-card .portfolio-card-title a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Experience Section Perfect Alignment */
+        .services-widget.v1 .my-skill-card {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            text-align: left !important;
+            padding: 38px 30px !important;
+            gap: 30px !important;
+        }
+
+        .services-widget.v1 .my-skill-card .card-icon {
+            flex: 0 0 65px !important;
+            width: 65px !important;
+            height: 65px !important;
+            margin: 0 !important;
+            flex-shrink: 0 !important;
+        }
+
+        .services-widget.v1 .my-skill-card .card-title {
+            flex: 0 0 380px !important;
+            width: 380px !important;
+            min-width: 380px !important;
+            max-width: 380px !important;
+            text-align: left !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .services-widget.v1 .my-skill-card .card-title .main-title {
+            text-align: left !important;
+            font-size: 26px !important;
+            line-height: 34px !important;
+            margin-bottom: 6px !important;
+            white-space: nowrap !important;
+        }
+
+        /* Dark Theme-Related Active/Hover Background for Experience Section */
+        .services-widget.v1 .active-bg {
+            background: linear-gradient(135deg, rgba(255, 1, 79, 0.20) 0%, rgba(26, 17, 22, 0.96) 45%, rgba(18, 18, 22, 0.98) 100%) !important;
+            border: 1px solid rgba(255, 1, 79, 0.45) !important;
+            border-radius: 0 !important;
+            box-shadow: 0 16px 40px -10px rgba(255, 1, 79, 0.28), inset 0 0 25px rgba(255, 1, 79, 0.06) !important;
+        }
+
+        .services-widget.v1 .service-item .my-skill-card .card-title .main-title {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        .services-widget.v1 .service-item .my-skill-card .card-title .sub-title {
+            text-align: left !important;
+            font-size: 16px !important;
+            line-height: 24px !important;
+            margin-bottom: 0 !important;
+            color: var(--color-primary) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .services-widget.v1 .service-item.mleave .my-skill-card .card-title .sub-title {
+            color: var(--color-gray) !important;
+            opacity: 0.8;
+        }
+
+        .services-widget.v1 .service-item .my-skill-card .card-para {
+            flex: 1 1 auto !important;
+            max-width: 580px !important;
+            text-align: left !important;
+            margin: 0 0 0 auto !important;
+            line-height: 26px !important;
+            color: #f0f0f3 !important;
+            transition: color 0.3s ease;
+        }
+
+        .services-widget.v1 .service-item.mleave .my-skill-card .card-para {
+            color: var(--color-gray) !important;
+        }
+
+        .services-widget.v1 .my-skill-card .card-icon {
+            flex: 0 0 65px !important;
+            width: 65px !important;
+            height: 65px !important;
+            margin: 0 !important;
+            flex-shrink: 0 !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.10) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .services-widget.v1 .service-item:hover .my-skill-card .card-icon,
+        .services-widget.v1 .service-item.current:not(.mleave) .my-skill-card .card-icon {
+            background: rgba(255, 1, 79, 0.16) !important;
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 20px rgba(255, 1, 79, 0.3) !important;
+        }
+
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .services-widget.v1 .my-skill-card .card-title {
+                flex: 0 0 320px !important;
+                width: 320px !important;
+                min-width: 320px !important;
+                max-width: 320px !important;
+            }
+
+            .services-widget.v1 .my-skill-card .card-title .main-title {
+                font-size: 22px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .services-widget.v1 .my-skill-card {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                text-align: left !important;
+                padding: 30px 20px !important;
+                gap: 16px !important;
+            }
+
+            .services-widget.v1 .my-skill-card .card-title {
+                flex: 0 0 auto !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                text-align: left !important;
+            }
+
+            .services-widget.v1 .my-skill-card .card-title .main-title {
+                font-size: 22px !important;
+                white-space: normal !important;
+                text-align: left !important;
+            }
+
+            .services-widget.v1 .my-skill-card .card-title .sub-title {
+                text-align: left !important;
+            }
+
+            .services-widget.v1 .my-skill-card .card-para {
+                margin: 0 !important;
+                max-width: 100% !important;
+                text-align: left !important;
+            }
+        }
+
+        /* Spacing After Education Section */
+        #education {
+            padding-bottom: 120px !important;
+        }
+
+        @media (max-width: 991px) {
+            #education {
+                padding-bottom: 80px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #education {
+                padding-bottom: 60px !important;
+            }
+        }
+
+        /* Spacing After Works Section */
+        .works-custom-box-bg {
+            margin-bottom: 120px !important;
+        }
+
+        #portfolio {
+            padding-bottom: 20px !important;
+        }
+
+        @media (max-width: 991px) {
+            .works-custom-box-bg {
+                margin-bottom: 80px !important;
+            }
+
+            #portfolio {
+                padding-bottom: 15px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .works-custom-box-bg {
+                margin-bottom: 60px !important;
+            }
+
+            #portfolio {
+                padding-bottom: 10px !important;
+            }
+        }
+
+        /* Contact Section Spacing */
+        .get-in-touch-area {
+            margin-bottom: 120px !important;
+        }
+
+        @media (max-width: 991px) {
+            .get-in-touch-area {
+                margin-bottom: 80px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .get-in-touch-area {
+                margin-bottom: 60px !important;
+            }
+        }
+
+        /* Black Footer Style 4 - Minimal Centered Logo Footer */
+        .tmp-footer-area.footer-style-4 {
+            background: #000000 !important;
+            background-color: #000000 !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 90px 0 80px 0 !important;
+        }
+
+        .tmp-footer-area.footer-style-4 .footer-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .tmp-footer-area.footer-style-4 .footer-area .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tmp-footer-area.footer-style-4 .footer-area .logo img {
+            max-width: 250px;
+            width: 250px;
+            height: auto;
+            display: inline-block;
+        }
+
+        .tmp-footer-area.footer-style-4 .description {
+            color: var(--color-gray);
+            font-size: 15px;
+            margin-top: 25px;
+            margin-bottom: 0;
+            font-family: var(--font-secondary);
+        }
+
+        .tmp-footer-area.footer-style-4 .description a {
+            color: var(--color-heading);
+            font-weight: 500;
+        }
+
+        .tmp-footer-area.footer-style-4 .description a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ========================================================
+           Centered & Inline Contact Section
+           ======================================================== */
+        .contact-header-center .subtitle {
+            color: var(--color-primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .contact-header-center .title-left {
+            color: var(--color-heading);
+            font-size: 46px;
+            line-height: 1.25;
+            font-weight: 700;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 991px) {
+            .contact-header-center .title-left {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .contact-header-center .title-left {
+                font-size: 30px;
+            }
+        }
+
+        .contact-inline-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 30px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-inline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .contact-inline-card:hover {
+            border-color: rgba(255, 1, 79, 0.45);
+            background: rgba(255, 1, 79, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 1, 79, 0.18);
+        }
+
+        .contact-inline-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-inline-icon {
+            flex-shrink: 0;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(255, 1, 79, 0.1);
+            border: 1.5px solid rgba(255, 1, 79, 0.28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 22px;
+            transition: all 0.35s ease;
+        }
+
+        .contact-inline-card:hover .contact-inline-icon {
+            background: var(--color-primary);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 1, 79, 0.6);
+            transform: scale(1.08);
+        }
+
+        .contact-inline-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .contact-inline-label {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-gray);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .contact-inline-value {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-heading);
+            word-break: break-word;
+            line-height: 1.35;
+        }
+
+        .contact-inline-value a {
+            color: var(--color-heading);
+            transition: color 0.25s ease;
+        }
+
+        .contact-inline-value a:hover {
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 575px) {
+            .contact-inline-card {
+                padding: 22px 18px;
+                gap: 16px;
+            }
+
+            .contact-inline-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+
+            .contact-inline-value {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body class="color-primary-2nd">
+
+    <!-- tpm-header-area start -->
+    <header class="tmp-header-area-start header-one header--sticky header--transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-content">
+                        <div class="logo">
+                            <a href="#home">
+                                <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                                    alt="Mohamed Ahil - Web Developer">
+                                <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                                    alt="Mohamed Ahil - Web Developer">
+                            </a>
+                        </div>
+                        <nav class="tmp-mainmenu-nav d-none d-xl-block navbar-example2 onepagenav">
+                            <ul class="tmp-mainmenu nav nav-pills">
+                                <li class="current"><a class="smoth-animation" href="#home">Home</a></li>
+                                <li class="nav-item"><a class="smoth-animation" href="#about">About</a></li>
+                                <li class="nav-item"><a class="smoth-animation" href="#skills">Skills</a></li>
+                                <li class="nav-item"><a class="smoth-animation" href="#experience">Experience</a></li>
+                                <li class="nav-item"><a class="smoth-animation" href="#education">Education</a></li>
+                                <li class="nav-item"><a class="external" href="my-works.html">My Works</a></li>
+                                <li class="nav-item"><a class="smoth-animation" href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="tmp-header-right">
+                            <div class="social-share-wrapper d-none d-md-block">
+                                <div class="social-link">
+                                    <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="actions-area">
+                                <div class="tmp-side-collups-area d-none d-xl-block">
+                                    <button class="tmp-menu-bars tmp_button_active"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                                <div class="tmp-side-collups-area d-block d-xl-none">
+                                    <button class="tmp-menu-bars humberger_menu_active"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- tpm-header-area end -->
+
+    <div class="d-none d-xl-block">
+        <div class="tmp-sidebar-area tmp_side_bar">
+            <div class="inner">
+                <div class="top-area">
+                    <a href="#home" class="logo">
+                        <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                            alt="Mohamed Ahil - Web Developer">
+                        <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                            alt="Mohamed Ahil - Web Developer">
+                    </a>
+                    <div class="close-icon-area">
+                        <button class="tmp-round-action-btn close_side_menu_active">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="short-contact-area">
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="information tmp-link-animation">
+                                <span>Call Now</span>
+                                <a href="tel:+918489389737" class="number">+91 8489389737</a>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="information tmp-link-animation">
+                                <span>Mail Me</span>
+                                <a href="mailto:smohamedahil@gmail.com" class="number">smohamedahil@gmail.com</a>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <div class="information tmp-link-animation">
+                                <span>My Address</span>
+                                <span class="number">Chennai, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+                    </div>
+                    <!-- social area start -->
+                    <div class="social-wrapper mt--20">
+                        <span class="subtitle">find with me</span>
+                        <div class="social-link">
+                            <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- social area end -->
+                    <div class="sidebar-resume-btn mt--30">
+                        <a class="tmp-btn hover-icon-reverse radius-round w-100 text-center" href="assets/images/cv.pdf"
+                            download="Mohamed-Ahil-Resume.pdf"
+                            style="display: flex; justify-content: center; align-items: center;">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Download My Resume</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="overlay_close_side_menu close_side_menu_active" href="javascript:void(0);"></a>
+    </div>
+
+    <div class="d-block d-xl-none">
+        <div class="tmp-popup-mobile-menu">
+            <div class="inner">
+                <div class="header-top">
+                    <div class="logo">
+                        <a href="#home" class="logo-area">
+                            <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                                alt="Mohamed Ahil - Web Developer">
+                            <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                                alt="Mohamed Ahil - Web Developer">
+                        </a>
+
+                    </div>
+                    <div class="close-menu">
+                        <button class="close-button tmp-round-action-btn">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="tmp-mainmenu onepagenav-click">
+                    <li><a class="smoth-animation" href="#home">Home</a></li>
+                    <li><a class="smoth-animation" href="#about">About</a></li>
+                    <li><a class="smoth-animation" href="#skills">Skills</a></li>
+                    <li><a class="smoth-animation" href="#experience">Experience</a></li>
+                    <li><a class="smoth-animation" href="#education">Education</a></li>
+                    <li><a href="my-works.html">Works</a></li>
+                    <li><a class="smoth-animation" href="#contact">Contact</a></li>
+                </ul>
+
+
+                <div class="social-wrapper mt--40">
+                    <span class="subtitle">find with me</span>
+                    <div class="social-link">
+                        <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- social area end -->
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- tmp banner area start -->
+    <div class="rpp-banner-three-area" id="home">
+        <div class="container">
+            <div class="banner-three-main-wrapper">
+                <div class="row">
+                    <div class="col-lg-5 col-xl-4">
+                        <div class="inner">
+                            <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">Web
+                                Developer</span>
+                            <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">Mohamed Ahil</h1>
+                            <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3"
+                                style="font-size: 18px; line-height: 28px; margin-top: 15px; margin-bottom: 25px; color: var(--color-white-off); font-family: var(--font-secondary);">
+                                Building Digital Experiences That Work.</p>
+                            <div class="button-area-banner-three tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                <a class="tmp-btn hover-icon-reverse radius-round" href="my-works.html">
+                                    <span class="icon-reverse-wrapper">
+                                        <span class="btn-text">Explore My Works</span>
+                                        <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                        <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="banner-right-content">
+                            <div class="about-me tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                <h3 class="title">About Me</h3>
+                                <p class="para tmp-title-split">I'm <span>Mohamed Ahil</span>, a <span>Web
+                                        Developer</span> with 2+ years of experience building, customizing, and
+                                    maintaining responsive websites and eCommerce experiences.</p>
+                            </div>
+                            <div class="year-expariance-wrap mt--30 tmp-scroll-trigger tmp-fade-in animation-order-2"
+                                style="display: flex; align-items: center; gap: 15px;">
+                                <h3 class="counter title"
+                                    style="font-size: 42px; font-weight: 700; line-height: 1; margin: 0; color: var(--color-heading); font-family: var(--font-primary);">
+                                    <span class="odometer" data-count="2">00</span>+
+                                </h3>
+                                <p class="para"
+                                    style="margin: 0; font-size: 15px; line-height: 20px; color: var(--color-gray); font-family: var(--font-secondary);">
+                                    Years of <br>Experience</p>
+                            </div>
+                            <div class="find-me-on mt--30 tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                <h2 class="find-me-on-title">Find me on</h2>
+                                <div class="social-link banner">
+                                    <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-benner-img-three">
+                    <img class="tmp-scroll-trigger tmp-zoom-in animation-order-2"
+                        src="assets/images/banner/Mohamed Ahil2.png" alt="Mohamed Ahil - Web Developer"
+                        style="-webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%); mask-image: linear-gradient(180deg, #000 65%, transparent 100%);">
+                </div>
+                <h2 class="texts-one up-down-2" style="left: 0; width: 100%; text-align: center;">WEB</h2>
+                <h2 class="texts-two up-down">DEVELOPER</h2>
+            </div>
+        </div>
+    </div>
+    <!-- tmp banner area end -->
+
+    <!-- Tpm Service Area Start -->
+    <section class="service-area tmp-section-gap" id="service">
+        <div class="container">
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-link-animation"
+                        style="padding: 35px 22px 30px; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="service-card-icon" style="margin-bottom: 20px;">
+                            <i class="fa-brands fa-wordpress"></i>
+                        </div>
+                        <h4 class="service-title" style="font-size: 20px; line-height: 28px; margin-bottom: 12px;"><a
+                                href="#service">WordPress Development</a></h4>
+                        <p class="service-para"
+                            style="font-size: 14px; line-height: 22px; margin-bottom: 15px; color: var(--color-gray);">
+                            Custom websites built with WordPress, Elementor, and flexible content management.</p>
+                        <span class="service-sub"
+                            style="margin-top: auto; font-size: 13px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.5px;">Website
+                            Development</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-2 tmp-link-animation"
+                        style="padding: 35px 22px 30px; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="service-card-icon" style="margin-bottom: 20px;">
+                            <i class="fa-light fa-bezier-curve"></i>
+                        </div>
+                        <h4 class="service-title" style="font-size: 20px; line-height: 28px; margin-bottom: 12px;"><a
+                                href="#service">UI & Theme Customization</a></h4>
+                        <p class="service-para"
+                            style="font-size: 14px; line-height: 22px; margin-bottom: 15px; color: var(--color-gray);">
+                            Responsive layouts, custom CSS, interactive elements, and tailored website designs.</p>
+                        <span class="service-sub"
+                            style="margin-top: auto; font-size: 13px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.5px;">Frontend
+                            Development</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-3 tmp-link-animation"
+                        style="padding: 35px 22px 30px; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="service-card-icon" style="margin-bottom: 20px;">
+                            <i class="fa-light fa-cart-shopping"></i>
+                        </div>
+                        <h4 class="service-title" style="font-size: 20px; line-height: 28px; margin-bottom: 12px;"><a
+                                href="#service">WooCommerce Development</a></h4>
+                        <p class="service-para"
+                            style="font-size: 14px; line-height: 22px; margin-bottom: 15px; color: var(--color-gray);">
+                            eCommerce websites, product layouts, store customization, and shopping experiences.</p>
+                        <span class="service-sub"
+                            style="margin-top: auto; font-size: 13px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.5px;">eCommerce
+                            Solutions</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-4 tmp-link-animation"
+                        style="padding: 35px 22px 30px; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="service-card-icon" style="margin-bottom: 20px;">
+                            <i class="fa-light fa-screwdriver-wrench"></i>
+                        </div>
+                        <h4 class="service-title" style="font-size: 20px; line-height: 28px; margin-bottom: 12px;"><a
+                                href="#service">Website Maintenance</a></h4>
+                        <p class="service-para"
+                            style="font-size: 14px; line-height: 22px; margin-bottom: 15px; color: var(--color-gray);">
+                            Website updates, troubleshooting, performance optimization, security, and ongoing support.
+                        </p>
+                        <span class="service-sub"
+                            style="margin-top: auto; font-size: 13px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.5px;">Maintenance
+                            & Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Service Area End -->
+
+    <!-- Tpm Counter Area Start -->
+    <section class="counter-area">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div
+                        class="year-of-expariance-wrapper bg-blur-style-one tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <div class="year-expariance-wrap">
+                            <h2 class="counter year-number"><span class="odometer" data-count="2">00</span>+
+                            </h2>
+                            <h3 class="year-title">Years Of <br> experience</h3>
+                        </div>
+                        <p class="year-para">Building, customizing, and maintaining responsive websites and eCommerce
+                            experiences that drive business results.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div class="counter-area-right-content">
+                        <div class="row g-5">
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <h3 class="counter counter-title"><span class="odometer" data-count="40">00</span>+
+                                    </h3>
+                                    <p class="counter-para">Projects Worked On</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <h3 class="counter counter-title"><span class="odometer" data-count="2">00</span>
+                                    </h3>
+                                    <p class="counter-para">Companies Worked With</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <h3 class="counter counter-title"><span class="odometer" data-count="4">00</span>+
+                                    </h3>
+                                    <p class="counter-para">Core Skill Areas</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <h3 class="counter counter-title"><span class="odometer" data-count="100">00</span>%
+                                    </h3>
+                                    <p class="counter-para">Client Satisfaction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Counter Area End -->
+
+    <!-- Tpm Latest Service Area / About Me Area Start -->
+    <section class="latest-service-area tmp-section-gapTop" id="about">
+        <div class="container">
+            <div class="section-head mb--60">
+                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">ABOUT ME</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Building Websites That
+                    Make a Difference</h2>
+                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">I'm Mohamed Ahil, a
+                    WordPress Developer with 2+ years of experience creating, customizing, and maintaining responsive
+                    websites and eCommerce solutions.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <h2 class="service-card-num"><span>01.</span>WordPress Development</h2>
+                        <p class="service-para">I develop professional WordPress websites using Elementor, WooCommerce,
+                            and custom themes to create functional, responsive, and user-friendly digital experiences.
+                        </p>
+                    </div>
+                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                        <h2 class="service-card-num"><span>02.</span>Design Meets Functionality</h2>
+                        <p class="service-para">I combine HTML, CSS, and JavaScript with WordPress customization to
+                            build engaging interfaces that work smoothly across desktop, tablet, and mobile devices.</p>
+                    </div>
+                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                        <h2 class="service-card-num"><span>03.</span>Performance & Website Maintenance</h2>
+                        <p class="service-para">I work on website optimization, troubleshooting, plugin management,
+                            security, and ongoing maintenance to keep websites reliable and performing well.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card-user-image">
+                        <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
+                            src="assets/images/banner/about.png" alt="Mohamed Ahil - About Me">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Latest Service Area / About Me Area End -->
+
+    <!-- Tpm My Skill Area Start -->
+    <section class="my-skill-area-style-two plr--120 plr_lg--30 plr_md--30 plr_sm--30 plr_mobile--15 mt--70"
+        id="skills">
+        <div class="tpm-custom-box-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-6 col-lg-12 col-md-12">
+                        <div class="my-skill-area-left-content-wrap">
+                            <div class="section-head text-align-left">
+                                <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <span class="subtitle">MY SKILLS</span>
+                                </div>
+                                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">My
+                                    Technical Expertise</h2>
+                                <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">My technical
+                                    skill set covers website development, WordPress customization, eCommerce solutions,
+                                    and AI-assisted development.</p>
+                                <div class="button-area mt--40 tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <a class="tmp-btn hover-icon-reverse radius-round download-btn"
+                                        href="assets/images/cv.pdf" download="Mohamed-Ahil-Resume.pdf"
+                                        style="margin-left: 0;">
+                                        <span class="icon-reverse-wrapper">
+                                            <span class="btn-text">Download My Resume</span>
+                                            <span class="btn-icon"><i
+                                                    class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i
+                                                    class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-lg-12 col-md-12">
+                        <div class="my-skill-card-style-two row g-4">
+                            <!-- Skill 01 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/skill-programming.svg"
+                                            alt="Programming Languages">
+                                    </div>
+                                    <h3 class="card-title">01. Programming Languages</h3>
+                                    <p class="card-para">HTML5 · CSS3 · JavaScript · PHP · MySQL</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill 02 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/skill-wordpress.svg" alt="WordPress & CMS">
+                                    </div>
+                                    <h3 class="card-title">02. WordPress & CMS</h3>
+                                    <p class="card-para">WordPress · Elementor · Elementor Pro · ACF · Theme
+                                        Customization · Plugin Management</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill 03 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/skill-ecommerce.svg" alt="eCommerce Development">
+                                    </div>
+                                    <h3 class="card-title">03. eCommerce Development</h3>
+                                    <p class="card-para">WooCommerce · Store Setup · Product Customization · Shopping
+                                        Cart · Payment Integration</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill 04 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/skill-ai.svg" alt="AI-Assisted Development">
+                                    </div>
+                                    <h3 class="card-title">04. AI-Assisted Development</h3>
+                                    <p class="card-para">AI Development Tools · AI-Assisted Coding · Code Generation ·
+                                        Debugging · Workflow Automation</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill 05 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-5">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/skill-optimization.svg"
+                                            alt="Website Optimization">
+                                    </div>
+                                    <h3 class="card-title">05. Website Optimization</h3>
+                                    <p class="card-para">Responsive Design · Performance Optimization · SEO Basics ·
+                                        Website Security · Website Maintenance</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill 06 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-6">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/skill-hosting.svg" alt="Hosting & Tools">
+                                    </div>
+                                    <h3 class="card-title">06. Hosting & Tools</h3>
+                                    <p class="card-para">Git · GitHub · cPanel · Hostinger · phpMyAdmin · Website
+                                        Deployment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tpm Experience Area Start -->
+    <section class="my-skill tmp-section-gapTop" id="experience">
+        <div class="container">
+            <div class="section-head text-center mb--60">
+                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">EXPERIENCE</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">My Work Experience
+                    &amp;<br> Professional Journey</h2>
+            </div>
+            <div class="services-widget v1">
+                <!-- Company 01: Innoblitz Technologies -->
+                <div class="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <img src="assets/images/banner/Innoblitz technologies.png" alt="Innoblitz Technologies"
+                                style="width: 44px; height: 44px; object-fit: contain; filter: none; border-radius: 50%;">
+                        </div>
+                        <div class="card-title" style="text-align: left;">
+                            <h3 class="main-title" style="text-align: left;">Innoblitz Technologies</h3>
+                            <p class="sub-title" style="text-align: left;">UI Developer</p>
+                            <p class="sub-title" style="text-align: left;">Feb 2025 - Present</p>
+                        </div>
+                        <p class="card-para" style="text-align: left;">UI Developer — Developing responsive
+                            WordPress websites, and business web solutions using Elementor, ACF, and
+                            modern web standards. Focused on website performance, cross-device responsiveness, and
+                            seamless user experience.</p>
+                    </div>
+                    <button class="service-link modal-popup" aria-label="Innoblitz Technologies"></button>
+                </div>
+
+                <!-- Company 02: VEMS Business Services -->
+                <div class="service-item tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <img src="assets/images/banner/Vems.png" alt="VEMS Business Services"
+                                style="width: 44px; height: 44px; object-fit: contain; filter: none; border-radius: 50%;">
+                        </div>
+                        <div class="card-title" style="text-align: left;">
+                            <h3 class="main-title" style="text-align: left;">VEMS Business Services Pvt. Ltd.</h3>
+                            <p class="sub-title" style="text-align: left;">Wordpress Developer</p>
+                            <p class="sub-title" style="text-align: left;">Jul 2024 - Jan 2025</p>
+                        </div>
+                        <p class="card-para" style="text-align: left;">WordPress Developer - Developed and customized
+                            responsive eCommerce and static websites, created custom page layouts, managed WordPress
+                            themes and plugins, optimized website performance, and ensured a consistent user experience
+                            across desktop, tablet, and mobile devices.</p>
+                    </div>
+                    <button class="service-link modal-popup" aria-label="VEMS Business Services"></button>
+                </div>
+
+                <div class="active-bg wow fadeInUp mleave"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Experience Area End -->
+
+    <!-- Tpm Education Area Start -->
+    <section class="my-skill tmp-section-gapTop tmp-section-gapBottom" id="education">
+        <div class="container">
+            <div class="section-head text-center mb--60">
+                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">EDUCATION</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Academic Qualifications
+                    &amp;<br> Educational Background</h2>
+            </div>
+            <div class="services-widget v1">
+                <!-- Degree 01: B.Sc. Computer Science -->
+                <div class="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <img src="assets/images/banner/algappa University.png" alt="Alagappa University"
+                                style="width: 44px; height: 44px; object-fit: contain; filter: none; border-radius: 50%;">
+                        </div>
+                        <div class="card-title" style="text-align: left;">
+                            <h3 class="main-title" style="text-align: left;">B.Sc. Computer Science</h3>
+                            <p class="sub-title" style="text-align: left;">Alagappa University &nbsp;•&nbsp; 2021 -
+                                2024
+                            </p>
+                        </div>
+                        <p class="card-para" style="text-align: left;">Completed Bachelor’s degree in Computer
+                            Science,
+                            gaining a strong foundation in programming, database management, software development
+                            principles, and modern web technologies.</p>
+                    </div>
+                    <button class="service-link modal-popup" aria-label="B.Sc. Computer Science"></button>
+                </div>
+
+                <!-- Degree 02: Master of Business Administration -->
+                <div class="service-item tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <img src="assets/images/banner/Madras University.png" alt="University of Madras"
+                                style="width: 44px; height: 44px; object-fit: contain; filter: none; border-radius: 50%;">
+                        </div>
+                        <div class="card-title" style="text-align: left;">
+                            <h3 class="main-title" style="text-align: left;">Master of Business Administration (MBA)
+                            </h3>
+                            <p class="sub-title" style="text-align: left;">University of Madras &nbsp;•&nbsp; 2025 -
+                                2027</p>
+                        </div>
+                        <p class="card-para" style="text-align: left;">Pursuing an MBA to develop advanced knowledge in
+                            business management, strategic planning, organizational behavior, project leadership, and
+                            modern business operations.</p>
+                    </div>
+                    <button class="service-link modal-popup" aria-label="Master of Business Administration"></button>
+                </div>
+
+                <div class="active-bg wow fadeInUp mleave"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Education Area End -->
+
+    <div class="tpm-custom-box-bg works-custom-box-bg">
+        <!-- Tpm Latest Portfolio Area Start -->
+        <div class="latest-portfolio-area custom-column-grid" id="portfolio">
+            <div class="container">
+                <div class="section-head mb--60">
+                    <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <span class="subtitle">MY WORKS</span>
+                    </div>
+                    <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Turning Ideas into
+                        Digital Experiences</h2>
+                    <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">Explore my
+                        portfolio of WordPress websites and eCommerce projects, showcasing my skills in website
+                        development, custom design, dynamic content, and performance optimization.</p>
+                </div>
+                <div class="row">
+                    <!-- Project 01: Bellfabs Boilers -->
+                    <div class="col-lg-6 col-md-6">
+                        <div
+                            class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="portfoli-card-img">
+                                <div class="img-box v2">
+                                    <a href="https://bellfabsindia.com/" target="_blank" rel="noopener noreferrer">
+                                        <img class="img-primary hidden-on-mobile"
+                                            src="assets/images/banner/Bellfabs Boilers.png" alt="Bellfabs Boilers">
+                                        <img class="img-secondary" src="assets/images/banner/Bellfabs Boilers.png"
+                                            alt="Bellfabs Boilers">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-card-content-wrap">
+                                <div class="content-left">
+                                    <span class="portfolio-card-category"
+                                        style="color: var(--color-primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Industrial
+                                        Engineering</span>
+                                    <h3 class="portfolio-card-title mt--5" style="margin-bottom: 0;"><a class="link"
+                                            href="https://bellfabsindia.com/" target="_blank"
+                                            rel="noopener noreferrer">Bellfabs Boilers</a></h3>
+                                    <p class="portfolio-card-desc">Corporate industrial website engineered for a premier
+                                        manufacturer of steam boilers, pressure vessels, and heat exchangers with
+                                        responsive product showcases.</p>
+                                </div>
+                                <a href="https://bellfabsindia.com/" target="_blank" rel="noopener noreferrer"
+                                    class="tmp-arrow-icon-btn" aria-label="Visit Bellfabs Boilers">
+                                    <div class="btn-inner">
+                                        <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                        <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 02: Sai Cocopeat -->
+                    <div class="col-lg-6 col-md-6">
+                        <div
+                            class="latest-portfolio-card mt--100 mt_sm--0 mt_md--50 tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="portfoli-card-img">
+                                <div class="img-box v2">
+                                    <a href="https://saicocopeat.com/" target="_blank" rel="noopener noreferrer">
+                                        <img class="img-primary hidden-on-mobile"
+                                            src="assets/images/banner/sai cocopeat.png" alt="Sai Cocopeat">
+                                        <img class="img-secondary" src="assets/images/banner/sai cocopeat.png"
+                                            alt="Sai Cocopeat">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-card-content-wrap">
+                                <div class="content-left">
+                                    <span class="portfolio-card-category"
+                                        style="color: var(--color-primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">eCommerce
+                                        & Exports</span>
+                                    <h3 class="portfolio-card-title mt--5" style="margin-bottom: 0;"><a class="link"
+                                            href="https://saicocopeat.com/" target="_blank"
+                                            rel="noopener noreferrer">Sai Cocopeat</a></h3>
+                                    <p class="portfolio-card-desc">Global export and product catalog website for
+                                        eco-friendly coir substrates, organic coco peat products, and sustainable
+                                        agricultural growing media.</p>
+                                </div>
+                                <a href="https://saicocopeat.com/" target="_blank" rel="noopener noreferrer"
+                                    class="tmp-arrow-icon-btn" aria-label="Visit Sai Cocopeat">
+                                    <div class="btn-inner">
+                                        <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                        <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 03: Ayatco International -->
+                    <div class="col-lg-6 col-md-6">
+                        <div
+                            class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="portfoli-card-img">
+                                <div class="img-box v2">
+                                    <a href="https://ayatco-international.com/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img class="img-primary hidden-on-mobile"
+                                            src="assets/images/banner/ayatco International.png"
+                                            alt="Ayatco International">
+                                        <img class="img-secondary" src="assets/images/banner/ayatco International.png"
+                                            alt="Ayatco International">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-card-content-wrap">
+                                <div class="content-left">
+                                    <span class="portfolio-card-category"
+                                        style="color: var(--color-primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Corporate
+                                        Engineering</span>
+                                    <h3 class="portfolio-card-title mt--5" style="margin-bottom: 0;"><a class="link"
+                                            href="https://ayatco-international.com/" target="_blank"
+                                            rel="noopener noreferrer">Ayatco International</a></h3>
+                                    <p class="portfolio-card-desc">Modern corporate engineering website showcasing MEP
+                                        contracting, ELV systems, engineering design, and industrial turnkey
+                                        infrastructure services.</p>
+                                </div>
+                                <a href="https://ayatco-international.com/" target="_blank" rel="noopener noreferrer"
+                                    class="tmp-arrow-icon-btn" aria-label="Visit Ayatco International">
+                                    <div class="btn-inner">
+                                        <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                        <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 04: IT-World -->
+                    <div class="col-lg-6 col-md-6">
+                        <div
+                            class="latest-portfolio-card mt--100 mt_sm--0 mt_md--50 tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="portfoli-card-img">
+                                <div class="img-box v2">
+                                    <a href="https://it-world.in/" target="_blank" rel="noopener noreferrer">
+                                        <img class="img-primary hidden-on-mobile"
+                                            src="assets/images/banner/IT-World.png" alt="IT-World">
+                                        <img class="img-secondary" src="assets/images/banner/IT-World.png"
+                                            alt="IT-World">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-card-content-wrap">
+                                <div class="content-left">
+                                    <span class="portfolio-card-category"
+                                        style="color: var(--color-primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Enterprise
+                                        Tech Solutions</span>
+                                    <h3 class="portfolio-card-title mt--5" style="margin-bottom: 0;"><a class="link"
+                                            href="https://it-world.in/" target="_blank"
+                                            rel="noopener noreferrer">IT-World</a></h3>
+                                    <p class="portfolio-card-desc">Enterprise IT solutions and retail platform
+                                        delivering cutting-edge devices, techwear, corporate IT infrastructure, and
+                                        authorized service centers.</p>
+                                </div>
+                                <a href="https://it-world.in/" target="_blank" rel="noopener noreferrer"
+                                    class="tmp-arrow-icon-btn" aria-label="Visit IT-World">
+                                    <div class="btn-inner">
+                                        <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                        <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center mt--60 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <a class="tmp-btn hover-icon-reverse radius-round" href="my-works.html">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">View All Works</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tpm Latest Portfolio Area End -->
+    </div>
+
+
+    <!-- Tpm Get In touch start -->
+    <section class="get-in-touch-area" id="contact">
+        <div class="container">
+            <div class="get-in-touch-wrapper tmponhover">
+                <!-- Centered Heading -->
+                <div class="contact-header-center text-center mb--45">
+                    <span class="subtitle tmp-scroll-trigger tmp-fade-in animation-order-1">Get In Touch</span>
+                    <h2 class="title-left tmp-scroll-trigger tmp-fade-in animation-order-2">Let's Connect and Create Impact</h2>
+                </div>
+
+                <!-- Inline Contact Details Cards -->
+                <div class="row g-4 justify-content-center">
+                    <!-- Phone / Contact Card -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="contact-inline-card tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="contact-inline-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-inline-content">
+                                <span class="contact-inline-label">Call / Contact</span>
+                                <h4 class="contact-inline-value">
+                                    <a href="tel:+918489389737">+91 8489389737</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="contact-inline-card tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <div class="contact-inline-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-inline-content">
+                                <span class="contact-inline-label">Email Address</span>
+                                <h4 class="contact-inline-value">
+                                    <a href="mailto:smohamedahil@gmail.com">smohamedahil@gmail.com</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="contact-inline-card tmp-scroll-trigger tmp-fade-in animation-order-3">
+                            <div class="contact-inline-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-inline-content">
+                                <span class="contact-inline-label">Location</span>
+                                <h4 class="contact-inline-value">
+                                    <span>Chennai, Tamil Nadu, India</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centered Download Resume Button -->
+                <div class="contact-resume-btn text-center mt--45 tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <a class="tmp-btn hover-icon-reverse radius-round btn-border"
+                        href="assets/images/cv.pdf" download="Mohamed-Ahil-Resume.pdf">
+                        <span class="icon-reverse-wrapper">
+                            <span class="btn-text">Download My Resume</span>
+                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Get In touch End -->
+
+    <!-- Start Footer Area  -->
+    <footer class="tmp-footer-area footer-style-4" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-area text-center">
+                        <div class="logo">
+                            <a href="#home">
+                                <img src="assets/images/banner/ahil-logo.png" alt="Mohamed Ahil - Web Developer">
+                            </a>
+                        </div>
+                        <p class="description mt--30">©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            . All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area  -->
+
+    <!-- WhatsApp floating chat button -->
+    <div class="ready-chatting-option tmp-ready-chat">
+        <a class="whatsapp-float-btn" href="https://wa.me/918489389737" target="_blank" rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp" style="box-shadow: none !important;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- WhatsApp floating chat button end -->
+    <!-- progress area start -->
+    <div class="scrollToTop" style="display: block;">
+        <div class="arrowUp">
+            <i class="fa-light fa-arrow-up"></i>
+        </div>
+        <div class="water" style="transform: translate(0px, 87%);">
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 560 20" style="display: none;">
+                <symbol id="wave">
+                    <path
+                        d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"
+                        fill="#"></path>
+                </symbol>
+            </svg>
+
+        </div>
+    </div>
+    <!-- progress area end -->
+
+
+
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+
+    <script src="assets/js/plugins/odometer.js"></script>
+    <script src="assets/js/vendor/appear.js"></script>
+
+
+    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+
+    <script src="assets/js/plugins/gsap.js"></script>
+    <script src="assets/js/plugins/splittext.js"></script>
+    <script src="assets/js/plugins/scrolltigger.js"></script>
+    <script src="assets/js/plugins/scrolltoplugins.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <!-- bootstrap Js-->
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/animation.js"></script>
+    <script src="assets/js/vendor/backtop.js"></script>
+    <script src="assets/js/plugins/text-type.js"></script>
+    <!-- custom Js -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

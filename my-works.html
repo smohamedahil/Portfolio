@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore the work, projects, and portfolio of Mohamed Ahil, Web Developer specializing in custom WordPress development, WooCommerce, and responsive web solutions.">
+    <link rel="shortcut icon" type="image/png" href="assets/images/banner/ahil-logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/banner/ahil-logo.png">
+    <link rel="apple-touch-icon" href="assets/images/banner/ahil-logo.png">
+    <title>My Works - Mohamed Ahil | Web Developer</title>
+    <!-- Bootstrap min css -->
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .header-one .header-content .logo img,
+        .tmp-sidebar-area .logo img,
+        .tmp-popup-mobile-menu .logo img,
+        .single-footer-wrapper .logo img,
+        .tmp-footer-area .logo img {
+            max-width: max-content;
+            width: 237px;
+        }
+
+        /* WhatsApp float button natural styling without shadows */
+        .ready-chatting-option.tmp-ready-chat .whatsapp-float-btn {
+            background-color: #25D366 !important;
+            color: #ffffff !important;
+            box-shadow: none !important;
+            border: none !important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            transition: transform 0.3s ease;
+        }
+
+        .ready-chatting-option.tmp-ready-chat .whatsapp-float-btn:hover {
+            transform: scale(1.08);
+            box-shadow: none !important;
+        }
+
+        .ready-chatting-option.tmp-ready-chat .whatsapp-float-btn i {
+            color: #ffffff !important;
+            font-size: 28px;
+        }
+
+        /* Breadcrumb banner background and spacing */
+        .breadcrumb-bg {
+            background-image: url('assets/images/banner/breadcum-bg.png') !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .breadcrumb-area {
+            padding-top: 170px;
+            padding-bottom: 70px;
+            position: relative;
+        }
+
+        @media (max-width: 991px) {
+            .breadcrumb-area {
+                padding-top: 130px;
+                padding-bottom: 50px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .breadcrumb-area {
+                padding-top: 110px;
+                padding-bottom: 40px;
+            }
+        }
+
+        /* Active navigation indicator */
+        .tmp-mainmenu-nav .tmp-mainmenu li.active>a,
+        .tmp-mainmenu-nav .tmp-mainmenu li.current>a {
+            color: var(--color-primary) !important;
+        }
+
+        /* Portfolio Filter Tabs Styling */
+        .latest-portfolio-tabs-area {
+            position: relative;
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs {
+            border: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding: 0;
+            margin: 0 0 20px 0 !important;
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs .nav-link {
+            padding: 12px 30px;
+            border-radius: 999px;
+            color: #d0d0d0;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs .nav-link:hover {
+            color: #ffffff;
+            border-color: var(--color-primary);
+            background: rgba(255, 1, 79, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs .nav-link.active {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 6px 20px rgba(255, 1, 79, 0.38);
+            transform: translateY(-2px);
+        }
+
+        /* Equalize card image sizes uniformly */
+        .latest-portfolio-card .portfoli-card-img .img-box {
+            position: relative;
+            width: 100%;
+            height: 360px !important;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .latest-portfolio-card .portfoli-card-img .img-box a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .latest-portfolio-card .portfoli-card-img .img-box img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            border-radius: 16px !important;
+            transition: transform 0.6s ease;
+        }
+
+        .latest-portfolio-card:hover .portfoli-card-img .img-box img {
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 991px) {
+            .latest-portfolio-card .portfoli-card-img .img-box {
+                height: 300px !important;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .latest-portfolio-card .portfoli-card-img .img-box {
+                height: 220px !important;
+            }
+
+            .latest-portfolio-tabs-area .nav-tabs .nav-link {
+                padding: 9px 18px;
+                font-size: 14px;
+            }
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap .content-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap .tmp-arrow-icon-btn {
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .latest-portfolio-card .portfolio-card-desc {
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .latest-portfolio-card .portfolio-card-title a {
+            transition: color 0.3s ease;
+        }
+
+        .latest-portfolio-card .portfolio-card-title a:hover {
+            color: var(--color-primary);
+        }
+
+        /* WordPress Project List View Styling */
+        .project-search-bar {
+            max-width: 620px;
+            margin: 0 auto 35px auto;
+        }
+
+        .project-search-bar .search-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-search-bar .search-icon {
+            position: absolute;
+            left: 22px;
+            color: var(--color-primary);
+            font-size: 15px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .project-search-bar input {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            border-radius: 999px !important;
+            padding: 13px 24px 13px 52px !important;
+            color: #ffffff !important;
+            font-size: 15px;
+            font-family: var(--font-secondary);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .project-search-bar input:focus {
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 22px rgba(255, 1, 79, 0.28) !important;
+            background: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        .project-search-bar input::placeholder {
+            color: #888894;
+        }
+
+        .project-search-bar .project-count-badge {
+            position: absolute;
+            right: 14px;
+            background: rgba(255, 1, 79, 0.15);
+            color: var(--color-primary);
+            border: 1px solid rgba(255, 1, 79, 0.35);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.3px;
+        }
+
+        .project-list-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: #141416;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none !important;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .project-list-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--color-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-list-card:hover {
+            background: linear-gradient(90deg, rgba(255, 1, 79, 0.10) 0%, rgba(20, 20, 24, 0.98) 100%);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -6px rgba(255, 1, 79, 0.28);
+        }
+
+        .project-list-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-list-card .project-info-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .project-list-card .project-num {
+            font-family: var(--font-primary);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-gray);
+            opacity: 0.6;
+            min-width: 24px;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .project-list-card:hover .project-num {
+            color: var(--color-primary);
+            opacity: 1;
+        }
+
+        .project-list-card .project-title-wrap {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .project-list-card .project-name {
+            color: #ffffff;
+            font-family: var(--font-primary);
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 24px;
+            margin: 0 0 3px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.3s ease;
+        }
+
+        .project-list-card:hover .project-name {
+            color: #ffffff;
+        }
+
+        .project-list-card .project-meta {
+            display: block;
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 13px;
+            line-height: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .project-list-card .project-arrow-wrap {
+            margin-left: 14px;
+            flex-shrink: 0;
+        }
+
+        .project-list-card .project-arrow-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .project-list-card:hover .project-arrow-btn {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #ffffff;
+            transform: rotate(45deg);
+            box-shadow: 0 0 14px rgba(255, 1, 79, 0.5);
+        }
+
+        @media (max-width: 575px) {
+            .project-list-card {
+                padding: 14px 18px;
+            }
+
+            .project-list-card .project-name {
+                font-size: 15px;
+            }
+
+            .project-list-card .project-meta {
+                font-size: 12px;
+            }
+
+            .project-search-bar input {
+                padding-right: 20px !important;
+            }
+
+            .project-search-bar .project-count-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="color-primary-2nd inner">
+
+    <!-- tpm-header-area start -->
+    <header class="tmp-header-area-start header-one header--sticky header--transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-content">
+                        <div class="logo">
+                            <a href="index.html#home">
+                                <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                                    alt="Mohamed Ahil - Web Developer">
+                                <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                                    alt="Mohamed Ahil - Web Developer">
+                            </a>
+                        </div>
+                        <nav class="tmp-mainmenu-nav d-none d-xl-block">
+                            <ul class="tmp-mainmenu nav">
+                                <li><a href="index.html#home">Home</a></li>
+                                <li><a href="index.html#about">About</a></li>
+                                <li><a href="index.html#skills">Skills</a></li>
+                                <li><a href="index.html#experience">Experience</a></li>
+                                <li><a href="index.html#education">Education</a></li>
+                                <li class="current active"><a href="my-works.html">My Works</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="tmp-header-right">
+                            <div class="social-share-wrapper d-none d-md-block">
+                                <div class="social-link">
+                                    <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="actions-area">
+                                <div class="tmp-side-collups-area d-none d-xl-block">
+                                    <button class="tmp-menu-bars tmp_button_active" aria-label="Open sidebar menu"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                                <div class="tmp-side-collups-area d-block d-xl-none">
+                                    <button class="tmp-menu-bars humberger_menu_active" aria-label="Open mobile menu"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- tpm-header-area end -->
+
+    <!-- Desktop Sidebar Slide Area -->
+    <div class="d-none d-xl-block">
+        <div class="tmp-sidebar-area tmp_side_bar">
+            <div class="inner">
+                <div class="top-area">
+                    <a href="index.html#home" class="logo">
+                        <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                            alt="Mohamed Ahil - Web Developer">
+                        <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                            alt="Mohamed Ahil - Web Developer">
+                    </a>
+                    <div class="close-icon-area">
+                        <button class="tmp-round-action-btn close_side_menu_active" aria-label="Close sidebar menu">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="short-contact-area">
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="information tmp-link-animation">
+                                <span>Call Now</span>
+                                <a href="tel:+918489389737" class="number">+91 8489389737</a>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="information tmp-link-animation">
+                                <span>Mail Me</span>
+                                <a href="mailto:smohamedahil@gmail.com" class="number">smohamedahil@gmail.com</a>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <div class="information tmp-link-animation">
+                                <span>My Address</span>
+                                <span class="number">Chennai, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+                    </div>
+                    <!-- social area start -->
+                    <div class="social-wrapper mt--20">
+                        <span class="subtitle">find with me</span>
+                        <div class="social-link">
+                            <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- social area end -->
+                    <div class="sidebar-resume-btn mt--30">
+                        <a class="tmp-btn hover-icon-reverse radius-round w-100 text-center" href="assets/images/cv.pdf"
+                            download="Mohamed-Ahil-Resume.pdf"
+                            style="display: flex; justify-content: center; align-items: center;">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Download My Resume</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="overlay_close_side_menu close_side_menu_active" href="javascript:void(0);"></a>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="d-block d-xl-none">
+        <div class="tmp-popup-mobile-menu">
+            <div class="inner">
+                <div class="header-top">
+                    <div class="logo">
+                        <a href="index.html#home" class="logo-area">
+                            <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                                alt="Mohamed Ahil - Web Developer">
+                            <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                                alt="Mohamed Ahil - Web Developer">
+                        </a>
+                    </div>
+                    <div class="close-menu">
+                        <button class="close-button tmp-round-action-btn" aria-label="Close mobile menu">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="tmp-mainmenu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li class="active"><a href="my-works.html">My Works</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <div class="social-wrapper mt--40">
+                    <span class="subtitle">find with me</span>
+                    <div class="social-link">
+                        <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- social area end -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area breadcrumb-bg" style="background-image: url('assets/images/banner/breadcum-bg.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner text-center">
+                        <h1 class="title split-collab">My Works</h1>
+                        <ul class="page-list">
+                            <li class="tmp-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
+                            <li class="tmp-breadcrumb-item active">My Works</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+
+    <!-- Start Portfolio Tab Section -->
+    <section class="latest-portfolio-area custom-column-grid tmp-section-gapBottom pt--60">
+        <div class="container">
+            <div class="latest-portfolio-tabs-area">
+                <nav class="d-flex justify-content-center">
+                    <ul class="nav nav-tabs" id="portfolioTab" role="tablist">
+                        <li role="presentation">
+                            <button class="nav-link active" id="wordpress-tab" data-bs-toggle="tab"
+                                data-bs-target="#wordpress-pane" type="button" role="tab" aria-controls="wordpress-pane"
+                                aria-selected="true">Wordpress Websites</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="nav-link" id="ecommerce-tab" data-bs-toggle="tab"
+                                data-bs-target="#ecommerce-pane" type="button" role="tab" aria-controls="ecommerce-pane"
+                                aria-selected="false">E-commerce</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="nav-link" id="landing-tab" data-bs-toggle="tab"
+                                data-bs-target="#landing-pane" type="button" role="tab" aria-controls="landing-pane"
+                                aria-selected="false">Landing Page</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab"
+                                data-bs-target="#dashboard-pane" type="button" role="tab" aria-controls="dashboard-pane"
+                                aria-selected="false">Dashboard UI</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="tab-content" id="portfolioTabContent">
+                    <!-- Tab 1: Wordpress Website (User's Complete 28 Projects List View) -->
+                    <div class="tab-pane fade show active" id="wordpress-pane" role="tabpanel"
+                        aria-labelledby="wordpress-tab" tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="projectSearchInput"
+                                    placeholder="Search WordPress projects by name or domain..." class="form-control"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+
+                        <!-- 28 Projects List View Grid (2 Columns, Name on Left, Redirect Arrow on Right) -->
+                        <div class="row g-3" id="wordpressProjectList">
+
+                            <!-- 01: Sai Cocopeat -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://saicocopeat.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">01</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Sai Cocopeat</h4>
+                                            <span class="project-meta">WordPress • saicocopeat.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Sai Cocopeat">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 02: F3 -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://firstframefourm.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">02</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">F3</h4>
+                                            <span class="project-meta">WordPress • firstframefourm.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to F3">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 03: Bricks and woods -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://bricksandwoods.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">03</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Bricks and woods</h4>
+                                            <span class="project-meta">WordPress • bricksandwoods.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Bricks and woods">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 04: Pentagon -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://pentagonms.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">04</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Pentagon</h4>
+                                            <span class="project-meta">WordPress • pentagonms.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Pentagon">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 05: Vine Infotech -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://vineinfotech.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">05</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Vine Infotech</h4>
+                                            <span class="project-meta">WordPress • vineinfotech.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Vine Infotech">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 06: Lifttech Landing Page -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://campaign.lifttechequipments.com/" target="_blank"
+                                    rel="noopener noreferrer" class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">06</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Lifttech Landing Page</h4>
+                                            <span class="project-meta">WordPress •
+                                                campaign.lifttechequipments.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Lifttech Landing Page">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 07: Bellfabs Boilers -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://bellfabsindia.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">07</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Bellfabs Boilers</h4>
+                                            <span class="project-meta">WordPress • bellfabsindia.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Bellfabs Boilers">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 08: IT-World -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://it-world.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">08</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">IT-World</h4>
+                                            <span class="project-meta">WordPress • it-world.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to IT-World">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 09: Ashwini -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://ashwinidigitalsolution.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">09</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Ashwini</h4>
+                                            <span class="project-meta">WordPress • ashwinidigitalsolution.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Ashwini">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 10: TVS -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://tvs.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">10</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">TVS</h4>
+                                            <span class="project-meta">WordPress • tvs.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to TVS">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 11: SG Promoters -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://sgpromoters.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">11</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">SG Promoters</h4>
+                                            <span class="project-meta">WordPress • sgpromoters.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to SG Promoters">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 12: Kids Nation -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://kidsnationpreschool.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">12</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Kids Nation</h4>
+                                            <span class="project-meta">WordPress • kidsnationpreschool.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Kids Nation">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 13: CES -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://www.core-energys.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">13</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">CES</h4>
+                                            <span class="project-meta">WordPress • core-energys.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to CES">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 14: Vetri MEP -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://vetrimep.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">14</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Vetri MEP</h4>
+                                            <span class="project-meta">WordPress • vetrimep.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Vetri MEP">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 15: Rigen -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://rigenacademy.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">15</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Rigen</h4>
+                                            <span class="project-meta">WordPress • rigenacademy.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Rigen">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 16: Maznica -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://maznica.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">16</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Maznica</h4>
+                                            <span class="project-meta">WordPress • maznica.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Maznica">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 17: JK Interiors -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://jkinteriorandexterior.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">17</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">JK Interiors</h4>
+                                            <span class="project-meta">WordPress • jkinteriorandexterior.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to JK Interiors">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 18: Apex -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://apex-electricals.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">18</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Apex</h4>
+                                            <span class="project-meta">WordPress • apex-electricals.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Apex">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 19: IWEU -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://iweuapp.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">19</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">IWEU</h4>
+                                            <span class="project-meta">WordPress • iweuapp.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to IWEU">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 20: Sri Durga -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://sridurgatmt.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">20</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Sri Durga</h4>
+                                            <span class="project-meta">WordPress • sridurgatmt.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Sri Durga">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 21: Learnxel -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://learnxel.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">21</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Learnxel</h4>
+                                            <span class="project-meta">WordPress • learnxel.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Learnxel">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 22: Andal associates -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://aapltd.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">22</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Andal associates</h4>
+                                            <span class="project-meta">WordPress • aapltd.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Andal associates">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 23: GCON -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://gconengineers.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">23</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">GCON</h4>
+                                            <span class="project-meta">WordPress • gconengineers.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to GCON">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 24: GMG -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://grandbuilders.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">24</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">GMG</h4>
+                                            <span class="project-meta">WordPress • grandbuilders.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to GMG">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 25: Ayatco -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://ayatco-international.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">25</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Ayatco</h4>
+                                            <span class="project-meta">WordPress • ayatco-international.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Ayatco">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 26: Niyata -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://niyatainfotech.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">26</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Niyata</h4>
+                                            <span class="project-meta">WordPress • niyatainfotech.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Niyata">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 27: EMR -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://emr.global/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">27</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">EMR</h4>
+                                            <span class="project-meta">WordPress • emr.global</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to EMR">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 28: CES -->
+                            <div class="col-lg-6 col-12 project-list-col">
+                                <a href="https://www.core-energys.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">28</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">CES</h4>
+                                            <span class="project-meta">WordPress • core-energys.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to CES">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: E-commerce (5 Projects List View) -->
+                    <div class="tab-pane fade" id="ecommerce-pane" role="tabpanel" aria-labelledby="ecommerce-tab"
+                        tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="ecommerceSearchInput"
+                                    placeholder="Search eCommerce projects by name or domain..." class="form-control"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+
+                        <!-- 5 Projects List View Grid (2 Columns, Name on Left, Redirect Arrow on Right) -->
+                        <div class="row g-3" id="ecommerceProjectList">
+
+                            <!-- 01: Timelux -->
+                            <div class="col-lg-6 col-12 ecommerce-list-col">
+                                <a href="https://timelux.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">01</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Timelux</h4>
+                                            <span class="project-meta">eCommerce • timelux.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Timelux">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 02: Lilara -->
+                            <div class="col-lg-6 col-12 ecommerce-list-col">
+                                <a href="https://lilara.in/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">02</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Lilara</h4>
+                                            <span class="project-meta">eCommerce • lilara.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Lilara">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 03: Palagai -->
+                            <div class="col-lg-6 col-12 ecommerce-list-col">
+                                <a href="https://demo.digitaltechalpha.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">03</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Palagai</h4>
+                                            <span class="project-meta">eCommerce • demo.digitaltechalpha.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Palagai">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 04: Eatups -->
+                            <div class="col-lg-6 col-12 ecommerce-list-col">
+                                <a href="https://eatupsindia.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">04</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Eatups</h4>
+                                            <span class="project-meta">eCommerce • eatupsindia.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Eatups">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 05: Biorithin -->
+                            <div class="col-lg-6 col-12 ecommerce-list-col">
+                                <a href="https://bioritin.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">05</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Biorithin</h4>
+                                            <span class="project-meta">eCommerce • bioritin.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Biorithin">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Landing Page (4 Projects List View) -->
+                    <div class="tab-pane fade" id="landing-pane" role="tabpanel" aria-labelledby="landing-tab"
+                        tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="landingSearchInput"
+                                    placeholder="Search Landing Pages by name or domain..." class="form-control"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+
+                        <!-- 4 Projects List View Grid (2 Columns, Name on Left, Redirect Arrow on Right) -->
+                        <div class="row g-3" id="landingProjectList">
+
+                            <!-- 01: BNA -->
+                            <div class="col-lg-6 col-12 landing-list-col">
+                                <a href="https://businessnetworkapp.com/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">01</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">BNA</h4>
+                                            <span class="project-meta">Landing Page • businessnetworkapp.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to BNA">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 02: BSS -->
+                            <div class="col-lg-6 col-12 landing-list-col">
+                                <a href="https://bestsecurity.co/lp/securityservices/" target="_blank"
+                                    rel="noopener noreferrer" class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">02</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">BSS</h4>
+                                            <span class="project-meta">Landing Page • bestsecurity.co</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to BSS">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 03: Koka -->
+                            <div class="col-lg-6 col-12 landing-list-col">
+                                <a href="https://campaign.innoblitz.in/koka/" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">03</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Koka</h4>
+                                            <span class="project-meta">Landing Page • campaign.innoblitz.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Koka">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 04: Liftech -->
+                            <div class="col-lg-6 col-12 landing-list-col">
+                                <a href="https://lifttechequipments.innoblitz.in/" target="_blank"
+                                    rel="noopener noreferrer" class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">04</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Liftech</h4>
+                                            <span class="project-meta">Landing Page •
+                                                lifttechequipments.innoblitz.in</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Liftech">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Dashboard UI (2 Projects List View) -->
+                    <div class="tab-pane fade" id="dashboard-pane" role="tabpanel" aria-labelledby="dashboard-tab"
+                        tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="dashboardSearchInput"
+                                    placeholder="Search Dashboard UI projects by name or domain..." class="form-control"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+
+                        <!-- 2 Projects List View Grid (2 Columns, Name on Left, Redirect Arrow on Right) -->
+                        <div class="row g-3" id="dashboardProjectList">
+
+                            <!-- 01: Pyxis -->
+                            <div class="col-lg-6 col-12 dashboard-list-col">
+                                <a href="https://ui.innoblitz.in/pyxis_v2/index.html" target="_blank"
+                                    rel="noopener noreferrer" class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">01</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Pyxis</h4>
+                                            <span class="project-meta">Dashboard UI • ui.innoblitz.in/pyxis_v2</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Pyxis">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 02: Rotary -->
+                            <div class="col-lg-6 col-12 dashboard-list-col">
+                                <a href="https://ui.innoblitz.in/rotary/#" target="_blank" rel="noopener noreferrer"
+                                    class="project-list-card">
+                                    <div class="project-info-wrap">
+                                        <span class="project-num">02</span>
+                                        <div class="project-title-wrap">
+                                            <h4 class="project-name">Rotary</h4>
+                                            <span class="project-meta">Dashboard UI • ui.innoblitz.in/rotary</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-arrow-wrap">
+                                        <span class="project-arrow-btn" aria-label="Redirect to Rotary">
+                                            <i class="fa-solid fa-arrow-up-right"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio Tab Section -->
+
+    <!-- Start Footer Area -->
+    <footer class="tmp-footer-area footer-style-4" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-area text-center">
+                        <div class="logo">
+                            <a href="index.html#home">
+                                <img src="assets/images/banner/ahil-logo.png" alt="Mohamed Ahil - Web Developer">
+                            </a>
+                        </div>
+                        <p class="description mt--30 mb--30">©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            . All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <!-- WhatsApp floating chat button -->
+    <div class="ready-chatting-option tmp-ready-chat">
+        <a class="whatsapp-float-btn" href="https://wa.me/918489389737" target="_blank" rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- WhatsApp floating chat button end -->
+
+    <!-- Scroll to top progress area start -->
+    <div class="scrollToTop" style="display: block;">
+        <div class="arrowUp">
+            <i class="fa-light fa-arrow-up"></i>
+        </div>
+        <div class="water" style="transform: translate(0px, 87%);">
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 560 20" style="display: none;">
+                <symbol id="wave">
+                    <path
+                        d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"
+                        fill="#"></path>
+                </symbol>
+            </svg>
+        </div>
+    </div>
+    <!-- Scroll to top progress area end -->
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/plugins/odometer.js"></script>
+    <script src="assets/js/vendor/appear.js"></script>
+    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/plugins/gsap.js"></script>
+    <script src="assets/js/plugins/splittext.js"></script>
+    <script src="assets/js/plugins/scrolltigger.js"></script>
+    <script src="assets/js/plugins/scrolltoplugins.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/animation.js"></script>
+    <script src="assets/js/vendor/backtop.js"></script>
+    <script src="assets/js/plugins/text-type.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Live Project Filter Script -->
+    <script>
+            (function () {
+                function setupFilter(inputId, itemSelector) {
+                    const searchInput = document.getElementById(inputId);
+                    const projectItems = document.querySelectorAll(itemSelector);
+
+                    if (searchInput && projectItems.length) {
+                        searchInput.addEventListener('input', function () {
+                            const query = this.value.toLowerCase().trim();
+
+                            projectItems.forEach(function (item) {
+                                const text = item.textContent.toLowerCase();
+                                if (text.includes(query)) {
+                                    item.style.display = '';
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Tab 1: WordPress Projects
+                setupFilter('projectSearchInput', '.project-list-col');
+
+                // Tab 2: eCommerce Projects
+                setupFilter('ecommerceSearchInput', '.ecommerce-list-col');
+
+                // Tab 3: Landing Page Projects
+                setupFilter('landingSearchInput', '.landing-list-col');
+
+                // Tab 4: Dashboard UI Projects
+                setupFilter('dashboardSearchInput', '.dashboard-list-col');
+            })();
+    </script>
+
+</body>
+
+</html>

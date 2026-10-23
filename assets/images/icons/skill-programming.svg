@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="codeGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5B5B"/>
+      <stop offset="100%" stop-color="#FF014F"/>
+    </linearGradient>
+  </defs>
+  <!-- Left code angle bracket < -->
+  <path d="M15 13L5 24L15 35" stroke="url(#codeGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right code angle bracket > -->
+  <path d="M33 13L43 24L33 35" stroke="url(#codeGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Center slash / -->
+  <path d="M28 9L20 39" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg width="60" height="104" viewBox="0 0 60 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Subtle Theme Red Tech Pattern -->
+  <g stroke="#FF014F" stroke-width="0.8" opacity="0.32">
+    <!-- Vertical segments -->
+    <line x1="0" y1="8.66" x2="0" y2="43.34" />
+    <line x1="60" y1="8.66" x2="60" y2="43.34" />
+    <line x1="30" y1="60.66" x2="30" y2="95.34" />
+    
+    <!-- Angled segments -->
+    <line x1="0" y1="8.66" x2="30" y2="-8.66" />
+    <line x1="0" y1="112.66" x2="30" y2="95.34" />
+    
+    <line x1="60" y1="8.66" x2="30" y2="-8.66" />
+    <line x1="60" y1="112.66" x2="30" y2="95.34" />
+    
+    <line x1="0" y1="43.34" x2="30" y2="60.66" />
+    <line x1="60" y1="43.34" x2="30" y2="60.66" />
+    
+    <line x1="30" y1="95.34" x2="0" y2="112.66" />
+    <line x1="30" y1="95.34" x2="60" y2="112.66" />
+    <line x1="30" y1="-8.66" x2="0" y2="8.66" />
+    <line x1="30" y1="-8.66" x2="60" y2="8.66" />
+  </g>
+  
+  <!-- Subtle theme red node accents -->
+  <circle cx="30" cy="60.66" r="1.5" fill="#FF014F" opacity="0.45" />
+  <circle cx="0" cy="8.66" r="1.5" fill="#FF014F" opacity="0.45" />
+  <circle cx="60" cy="8.66" r="1.5" fill="#FF014F" opacity="0.45" />
+  <circle cx="0" cy="43.34" r="1.5" fill="#FF014F" opacity="0.45" />
+  <circle cx="60" cy="43.34" r="1.5" fill="#FF014F" opacity="0.45" />
+  <circle cx="30" cy="95.34" r="1.5" fill="#FF014F" opacity="0.45" />
+</svg>

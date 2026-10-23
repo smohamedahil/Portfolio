@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="optGrad" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="needleGrad" x1="24" y1="26" x2="36" y2="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5B5B"/>
+      <stop offset="100%" stop-color="#FF014F"/>
+    </linearGradient>
+  </defs>
+  <!-- Speedometer Arc -->
+  <path d="M10 34C7 29.5 6 25 6 21C6 11.06 14.06 3 24 3C33.94 3 42 11.06 42 21C42 25 41 29.5 38 34" stroke="url(#optGrad)" stroke-width="3.5" stroke-linecap="round"/>
+  
+  <!-- Speed Gauge Ticks -->
+  <line x1="12" y1="21" x2="16" y2="21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="9" x2="24" y2="13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="21" x2="32" y2="21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Performance Needle -->
+  <path d="M24 26L35 15" stroke="url(#needleGrad)" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="24" cy="26" r="4.5" fill="#FFFFFF"/>
+  <circle cx="24" cy="26" r="2" fill="#FF014F"/>
+
+  <!-- Speed Lightning Bolt -->
+  <path d="M26 33L21 41H27L24 46" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -294,7 +294,7 @@
     }
 
     function subscribe(callback) {
-        if (typeof callback !== 'function') return function () {};
+        if (typeof callback !== 'function') return function () { };
 
         const onStorage = function (event) {
             if (event.key === STORAGE_KEY) {

@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel - Mohamed Ahil | Portfolio</title>
+    <script>
+        if (window.location.protocol !== 'file:' && !window.location.pathname.endsWith('/') && !window.location.pathname.endsWith('.html')) {
+            window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        }
+    </script>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/banner/ahil-logo.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="../assets/images/banner/ahil-logo.png">
+    <link rel="stylesheet" href="../assets/css/vendor/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        body.admin-body {
+            background: #060606;
+            color: #ffffff;
+            min-height: 100vh;
+            font-family: var(--font-secondary);
+        }
+
+        .admin-shell {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Login View */
+        .admin-login-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+            background: radial-gradient(circle at top right, rgba(255, 73, 74, 0.14), transparent 45%),
+                radial-gradient(circle at bottom left, rgba(255, 1, 79, 0.08), transparent 45%);
+        }
+
+        .admin-login-card {
+            width: 100%;
+            max-width: 440px;
+            background: #141416;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 38px 34px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+        }
+
+        .admin-login-logo {
+            display: block;
+            width: 190px;
+            margin: 0 auto 24px auto;
+        }
+
+        .admin-login-title {
+            font-family: var(--font-primary);
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .admin-login-subtitle {
+            color: var(--color-gray);
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .admin-label {
+            display: block;
+            font-family: var(--font-primary);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            color: #dedede;
+            margin-bottom: 8px;
+        }
+
+        .admin-input,
+        .admin-select {
+            width: 100% !important;
+            height: 46px !important;
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            border-radius: 12px !important;
+            color: #ffffff !important;
+            padding: 10px 16px !important;
+            font-size: 14px !important;
+            line-height: 24px !important;
+            font-family: var(--font-secondary) !important;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .admin-select option {
+            background: #141416;
+            color: #ffffff;
+        }
+
+        .admin-input:focus,
+        .admin-select:focus {
+            outline: none !important;
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 0 3px rgba(255, 73, 74, 0.18) !important;
+            background: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        .admin-input::placeholder {
+            color: #7c7c88;
+        }
+
+        .password-field-wrap {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-field-wrap .admin-input {
+            padding-right: 48px !important;
+        }
+
+        .password-toggle-btn {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px !important;
+            height: 36px !important;
+            min-width: 36px;
+            background: transparent !important;
+            border: none !important;
+            border-radius: 8px;
+            color: var(--color-gray);
+            cursor: pointer;
+            padding: 0 !important;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .password-toggle-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        .admin-btn-primary {
+            width: auto;
+            background: var(--color-primary);
+            color: #ffffff;
+            border: 1px solid var(--color-primary);
+            border-radius: 999px;
+            padding: 12px 24px;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .admin-btn-primary.w-100 {
+            width: 100%;
+        }
+
+        .admin-btn-primary:hover {
+            background: #e33839;
+            border-color: #e33839;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(255, 73, 74, 0.35);
+            color: #ffffff;
+        }
+
+        .admin-btn-outline {
+            width: auto !important;
+            background: rgba(255, 255, 255, 0.04);
+            color: #e4e4e4;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 999px;
+            padding: 9px 18px;
+            font-family: var(--font-primary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .admin-btn-outline.w-100 {
+            width: 100% !important;
+        }
+
+        .admin-btn-outline:hover {
+            border-color: var(--color-primary);
+            color: #ffffff;
+            background: rgba(255, 73, 74, 0.12);
+        }
+
+        .admin-btn-danger-outline {
+            width: auto !important;
+            background: rgba(255, 73, 74, 0.08);
+            color: #ff7b7c;
+            border: 1px solid rgba(255, 73, 74, 0.3);
+            border-radius: 999px;
+            padding: 9px 18px;
+            font-family: var(--font-primary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .admin-btn-danger-outline.w-100 {
+            width: 100% !important;
+        }
+
+        .admin-btn-danger-outline:hover {
+            background: var(--color-primary);
+            color: #ffffff;
+            border-color: var(--color-primary);
+        }
+
+        .admin-alert-error {
+            background: rgba(255, 73, 74, 0.12);
+            border: 1px solid rgba(255, 73, 74, 0.4);
+            color: #ff9c9d;
+            border-radius: 12px;
+            padding: 11px 14px;
+            font-size: 13px;
+            margin-bottom: 18px;
+            display: none;
+        }
+
+        /* Dashboard Header */
+        .admin-topbar {
+            background: #101012;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .admin-topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .admin-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .admin-brand img {
+            width: 170px;
+            height: auto;
+        }
+
+        .admin-badge {
+            background: rgba(255, 73, 74, 0.16);
+            color: var(--color-primary);
+            border: 1px solid rgba(255, 73, 74, 0.38);
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-family: var(--font-primary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        .admin-topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .admin-main {
+            padding: 34px 0 64px 0;
+            flex: 1;
+        }
+
+        /* Stats Cards */
+        .admin-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 1199px) {
+            .admin-stats-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 767px) {
+            .admin-stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .admin-stats-grid .stat-card:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .stat-card {
+            background: #141416;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+            min-height: 112px;
+        }
+
+        .stat-card:hover,
+        .stat-card.active {
+            border-color: var(--color-primary);
+            background: linear-gradient(145deg, rgba(255, 73, 74, 0.14), #141416);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(255, 73, 74, 0.14);
+        }
+
+        .stat-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .stat-card-label {
+            color: #c8c8d0;
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .stat-card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 73, 74, 0.12);
+            border: 1px solid rgba(255, 73, 74, 0.24);
+            color: var(--color-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .stat-card.active .stat-card-icon {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #ffffff;
+        }
+
+        .stat-card-bottom {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .stat-card-value {
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .stat-card-hint {
+            font-size: 11px;
+            color: var(--color-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        /* Panels */
+        .admin-panel-card {
+            background: #141416;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 26px;
+        }
+
+        .admin-panel-title {
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .admin-panel-subtitle {
+            color: var(--color-gray);
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        /* Dashboard Search Bar */
+        .admin-search-wrap {
+            position: relative;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .admin-search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-primary);
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .admin-search-wrap .admin-input {
+            padding-left: 44px !important;
+            padding-right: 44px !important;
+            border-radius: 999px !important;
+        }
+
+        .admin-search-clear {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px !important;
+            height: 30px !important;
+            border: none !important;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08) !important;
+            color: #d0d0d0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0 !important;
+            font-size: 12px;
+            z-index: 2;
+        }
+
+        .admin-search-clear.visible {
+            display: inline-flex;
+        }
+
+        .admin-search-clear:hover {
+            background: var(--color-primary) !important;
+            color: #ffffff;
+        }
+
+        /* Filter Pills */
+        .admin-filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .admin-filter-pill {
+            width: auto !important;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            color: #d0d0d0;
+            font-family: var(--font-primary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .admin-filter-pill:hover {
+            border-color: var(--color-primary);
+            color: #ffffff;
+        }
+
+        .admin-filter-pill.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #ffffff;
+        }
+
+        /* Project Management Cards Grid */
+        .admin-project-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 767px) {
+            .admin-project-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .admin-project-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 18px;
+            background: #0e0e10;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+            min-width: 0;
+        }
+
+        .admin-project-item:hover {
+            border-color: rgba(255, 73, 74, 0.55);
+            background: #17171b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .admin-project-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .admin-project-badge-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .admin-project-index {
+            font-family: var(--font-primary);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-primary);
+            background: rgba(255, 73, 74, 0.12);
+            border: 1px solid rgba(255, 73, 74, 0.25);
+            border-radius: 8px;
+            padding: 2px 8px;
+            line-height: 1.4;
+        }
+
+        .admin-project-meta {
+            min-width: 0;
+        }
+
+        .admin-project-name {
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 4px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .admin-cat-chip {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: rgba(255, 73, 74, 0.14);
+            color: #ff8687;
+            border: 1px solid rgba(255, 73, 74, 0.28);
+            white-space: nowrap;
+        }
+
+        .admin-project-url {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--color-gray);
+            font-size: 13px;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .admin-project-url span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .admin-project-url:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .admin-project-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .icon-action-btn {
+            width: 32px !important;
+            height: 32px !important;
+            padding: 0 !important;
+            border-radius: 9px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            color: #d6d6d6;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .icon-action-btn:hover {
+            border-color: var(--color-primary);
+            color: #ffffff;
+            background: rgba(255, 73, 74, 0.15);
+        }
+
+        .icon-action-btn.delete-btn:hover {
+            background: #dc3545;
+            border-color: #dc3545;
+            color: #ffffff;
+        }
+
+        /* Modal overrides */
+        .admin-modal .modal-content {
+            background: #141416;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 18px;
+            color: #ffffff;
+        }
+
+        .admin-modal .modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 24px;
+        }
+
+        .admin-modal .modal-title {
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .admin-modal .btn-close {
+            width: 32px !important;
+            height: 32px !important;
+            padding: 0 !important;
+            border: none !important;
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+
+        .admin-modal .modal-body {
+            padding: 24px;
+        }
+
+        .admin-modal .modal-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 16px 24px;
+        }
+
+        /* Toast */
+        .admin-toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1080;
+            background: #1b1b1f;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 12px;
+            padding: 14px 18px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            max-width: 360px;
+        }
+
+        .admin-toast.show {
+            display: flex;
+        }
+
+        .admin-toast.success {
+            border-left-color: #3EB75E;
+        }
+
+        .admin-toast.error {
+            border-left-color: #FF494A;
+        }
+    </style>
+</head>
+
+<body class="color-primary-2nd admin-body">
+    <div class="admin-shell">
+
+        <!-- Login Gate -->
+        <section id="loginSection" class="admin-login-wrapper">
+            <div class="admin-login-card">
+                <img src="../assets/images/banner/ahil-logo.png" alt="Mohamed Ahil" class="admin-login-logo">
+                <h1 class="admin-login-title">Admin Panel</h1>
+                <p class="admin-login-subtitle">Sign in to add or manage your portfolio projects</p>
+
+                <div id="loginErrorAlert" class="admin-alert-error" role="alert">
+                    <i class="fa-solid fa-circle-exclamation me-2"></i>
+                    <span id="loginErrorText">Invalid username or password.</span>
+                </div>
+
+                <form id="adminLoginForm" novalidate>
+                    <div class="mb-3">
+                        <label for="loginUsername" class="admin-label">Username</label>
+                        <input type="email" id="loginUsername" class="admin-input" placeholder="Enter your email"
+                            autocomplete="username" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="loginPassword" class="admin-label">Password</label>
+                        <div class="password-field-wrap">
+                            <input type="password" id="loginPassword" class="admin-input"
+                                placeholder="Enter your password" autocomplete="current-password" required>
+                            <button type="button" id="togglePasswordBtn" class="password-toggle-btn"
+                                aria-label="Show password">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="admin-btn-primary w-100 mb-3">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Sign In</span>
+                    </button>
+
+                    <div class="text-center">
+                        <a href="../my-works.html" class="admin-btn-outline w-100">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Back to My Works</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="dashboardSection" style="display: none;">
+            <header class="admin-topbar">
+                <div class="container">
+                    <div class="admin-topbar-inner">
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                            <a href="../index.html" class="admin-brand">
+                                <img src="../assets/images/banner/ahil-logo.png" alt="Mohamed Ahil">
+                            </a>
+                            <span class="admin-badge">Admin Panel</span>
+                        </div>
+                        <div class="admin-topbar-actions">
+                            <a href="../my-works.html" target="_blank" rel="noopener noreferrer"
+                                class="admin-btn-outline">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>View My Works</span>
+                            </a>
+                            <a href="../index.html" class="admin-btn-outline">
+                                <i class="fa-solid fa-house"></i>
+                                <span>Portfolio Home</span>
+                            </a>
+                            <button type="button" id="logoutBtn" class="admin-btn-danger-outline">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="admin-main">
+                <div class="container">
+                    <!-- Category Stats Grid -->
+                    <div class="admin-stats-grid" id="statsRow">
+                        <div class="stat-card active" data-filter-category="all">
+                            <div class="stat-card-top">
+                                <span class="stat-card-label">All Projects</span>
+                                <span class="stat-card-icon"><i class="fa-solid fa-layer-group"></i></span>
+                            </div>
+                            <div class="stat-card-bottom">
+                                <div class="stat-card-value" id="statAll">0</div>
+                                <span class="stat-card-hint">Total</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-filter-category="wordpress">
+                            <div class="stat-card-top">
+                                <span class="stat-card-label">Wordpress Websites</span>
+                                <span class="stat-card-icon"><i class="fa-brands fa-wordpress"></i></span>
+                            </div>
+                            <div class="stat-card-bottom">
+                                <div class="stat-card-value" id="statWordpress">0</div>
+                                <span class="stat-card-hint">Tab 01</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-filter-category="ecommerce">
+                            <div class="stat-card-top">
+                                <span class="stat-card-label">E-commerce</span>
+                                <span class="stat-card-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                            </div>
+                            <div class="stat-card-bottom">
+                                <div class="stat-card-value" id="statEcommerce">0</div>
+                                <span class="stat-card-hint">Tab 02</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-filter-category="landing">
+                            <div class="stat-card-top">
+                                <span class="stat-card-label">Landing Page</span>
+                                <span class="stat-card-icon"><i class="fa-solid fa-rocket"></i></span>
+                            </div>
+                            <div class="stat-card-bottom">
+                                <div class="stat-card-value" id="statLanding">0</div>
+                                <span class="stat-card-hint">Tab 03</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-filter-category="dashboard">
+                            <div class="stat-card-top">
+                                <span class="stat-card-label">Dashboard UI</span>
+                                <span class="stat-card-icon"><i class="fa-solid fa-chart-line"></i></span>
+                            </div>
+                            <div class="stat-card-bottom">
+                                <div class="stat-card-value" id="statDashboard">0</div>
+                                <span class="stat-card-hint">Tab 04</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Add New Project Form -->
+                        <div class="col-lg-4">
+                            <div class="admin-panel-card">
+                                <h2 class="admin-panel-title">Add New Project</h2>
+                                <p class="admin-panel-subtitle">Choose one of the 4 category tabs and publish instantly
+                                    to My Works.</p>
+
+                                <form id="addProjectForm">
+                                    <div class="mb-3">
+                                        <label for="projectCategory" class="admin-label">Category (Tab)</label>
+                                        <select id="projectCategory" class="admin-select" required>
+                                            <option value="wordpress">Wordpress Websites</option>
+                                            <option value="ecommerce">E-commerce</option>
+                                            <option value="landing">Landing Page</option>
+                                            <option value="dashboard">Dashboard UI</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="projectName" class="admin-label">Project Name</label>
+                                        <input type="text" id="projectName" class="admin-input"
+                                            placeholder="e.g. Acme Studio" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="projectUrl" class="admin-label">Project Live URL</label>
+                                        <input type="text" id="projectUrl" class="admin-input"
+                                            placeholder="https://example.com/" required>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="projectDomain" class="admin-label">Display Domain <span
+                                                style="color: var(--color-gray); font-weight: 400;">(Optional)</span></label>
+                                        <input type="text" id="projectDomain" class="admin-input"
+                                            placeholder="Auto-filled from URL (e.g. example.com)">
+                                    </div>
+
+                                    <button type="submit" class="admin-btn-primary w-100">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <span>Add Project</span>
+                                    </button>
+                                </form>
+
+                                <hr style="border-color: rgba(255,255,255,0.08); margin: 24px 0;">
+
+                                <div class="d-flex flex-column gap-2">
+                                    <div class="d-flex gap-2">
+                                        <button type="button" id="exportJsonBtn" class="admin-btn-outline flex-fill">
+                                            <i class="fa-solid fa-download"></i>
+                                            <span>Export JSON</span>
+                                        </button>
+                                        <label for="importJsonInput" class="admin-btn-outline flex-fill mb-0"
+                                            style="cursor: pointer;">
+                                            <i class="fa-solid fa-upload"></i>
+                                            <span>Import JSON</span>
+                                        </label>
+                                        <input type="file" id="importJsonInput" accept="application/json,.json" hidden>
+                                    </div>
+                                    <button type="button" id="resetDefaultBtn" class="admin-btn-danger-outline w-100">
+                                        <i class="fa-solid fa-rotate-left"></i>
+                                        <span>Reset to Default Projects</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Manage Projects List -->
+                        <div class="col-lg-8">
+                            <div class="admin-panel-card">
+                                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+                                    <div>
+                                        <h2 class="admin-panel-title">Manage Projects</h2>
+                                        <p class="admin-panel-subtitle mb-0">Filter by tab, search, edit details, or
+                                            remove projects.</p>
+                                    </div>
+                                    <span class="admin-badge" id="visibleCountBadge">0 Showing</span>
+                                </div>
+
+                                <div class="admin-filter-pills mb-3" id="categoryFilterPills">
+                                    <button type="button" class="admin-filter-pill active"
+                                        data-category="all">All</button>
+                                    <button type="button" class="admin-filter-pill" data-category="wordpress">Wordpress
+                                        Websites</button>
+                                    <button type="button" class="admin-filter-pill"
+                                        data-category="ecommerce">E-commerce</button>
+                                    <button type="button" class="admin-filter-pill" data-category="landing">Landing
+                                        Page</button>
+                                    <button type="button" class="admin-filter-pill" data-category="dashboard">Dashboard
+                                        UI</button>
+                                </div>
+
+                                <div class="admin-search-wrap">
+                                    <i class="fa-solid fa-magnifying-glass admin-search-icon"></i>
+                                    <input type="text" id="adminSearchInput" class="admin-input"
+                                        placeholder="Search projects by name, domain, category, or URL..."
+                                        autocomplete="off">
+                                    <button type="button" id="adminSearchClearBtn" class="admin-search-clear"
+                                        aria-label="Clear search">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+
+                                <div id="adminProjectList" class="admin-project-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </div>
+
+    <!-- Edit Project Modal -->
+    <div class="modal fade admin-modal" id="editProjectModal" tabindex="-1" aria-labelledby="editProjectModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="editProjectForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProjectModalLabel">Edit Project</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="editProjectId">
+                        <div class="mb-3">
+                            <label for="editProjectCategory" class="admin-label">Category (Tab)</label>
+                            <select id="editProjectCategory" class="admin-select" required>
+                                <option value="wordpress">Wordpress Websites</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="landing">Landing Page</option>
+                                <option value="dashboard">Dashboard UI</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProjectName" class="admin-label">Project Name</label>
+                            <input type="text" id="editProjectName" class="admin-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProjectUrl" class="admin-label">Project Live URL</label>
+                            <input type="text" id="editProjectUrl" class="admin-input" required>
+                        </div>
+                        <div class="mb-0">
+                            <label for="editProjectDomain" class="admin-label">Display Domain</label>
+                            <input type="text" id="editProjectDomain" class="admin-input"
+                                placeholder="Auto-filled from URL if empty">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="admin-btn-outline" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="admin-btn-primary">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Save Changes</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="adminToast" class="admin-toast" role="status" aria-live="polite">
+        <i id="adminToastIcon" class="fa-solid fa-circle-check"></i>
+        <span id="adminToastMessage"></span>
+    </div>
+
+    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../assets/js/projects-store.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            var SESSION_KEY = 'ahil_portfolio_admin_session_v1';
+            var EXPECTED_USER_HASH = '07ef1ae120609dd4a1be8d274a26c74ca1812419172186455a9bd59b42c97c36';
+            var EXPECTED_PASS_HASH = 'f741304f7f0ffe14f8314608bf8f8ac28c7e036d26a043eab6fe57d1c1ee2c47';
+
+            // Pure-JS SHA-256 so credential verification works identically across https, http, and file://
+            function sha256Hex(message) {
+                function rightRotate(value, amount) {
+                    return (value >>> amount) | (value << (32 - amount));
+                }
+
+                var utf8 = unescape(encodeURIComponent(message));
+                var words = [];
+                for (var i = 0; i < utf8.length; i++) {
+                    words[i >> 2] |= (utf8.charCodeAt(i) & 0xff) << (24 - (i % 4) * 8);
+                }
+
+                var bitLen = utf8.length * 8;
+                words[bitLen >> 5] |= 0x80 << (24 - (bitLen % 32));
+                words[(((bitLen + 64) >> 9) << 4) + 15] = bitLen;
+
+                var h = [
+                    0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+                    0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
+                ];
+                var k = [
+                    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+                    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+                    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+                    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+                    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+                    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+                    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+                    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+                ];
+
+                var w = new Array(64);
+                for (var j = 0; j < words.length; j += 16) {
+                    var a = h[0], b = h[1], c = h[2], d = h[3];
+                    var e = h[4], f = h[5], g = h[6], hh = h[7];
+
+                    for (var t = 0; t < 64; t++) {
+                        if (t < 16) {
+                            w[t] = words[j + t] | 0;
+                        } else {
+                            var s0 = rightRotate(w[t - 15], 7) ^ rightRotate(w[t - 15], 18) ^ (w[t - 15] >>> 3);
+                            var s1 = rightRotate(w[t - 2], 17) ^ rightRotate(w[t - 2], 19) ^ (w[t - 2] >>> 10);
+                            w[t] = (w[t - 16] + s0 + w[t - 7] + s1) | 0;
+                        }
+
+                        var S1 = rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25);
+                        var ch = (e & f) ^ ((~e) & g);
+                        var temp1 = (hh + S1 + ch + k[t] + w[t]) | 0;
+                        var S0 = rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22);
+                        var maj = (a & b) ^ (a & c) ^ (b & c);
+                        var temp2 = (S0 + maj) | 0;
+
+                        hh = g;
+                        g = f;
+                        f = e;
+                        e = (d + temp1) | 0;
+                        d = c;
+                        c = b;
+                        b = a;
+                        a = (temp1 + temp2) | 0;
+                    }
+
+                    h[0] = (h[0] + a) | 0;
+                    h[1] = (h[1] + b) | 0;
+                    h[2] = (h[2] + c) | 0;
+                    h[3] = (h[3] + d) | 0;
+                    h[4] = (h[4] + e) | 0;
+                    h[5] = (h[5] + f) | 0;
+                    h[6] = (h[6] + g) | 0;
+                    h[7] = (h[7] + hh) | 0;
+                }
+
+                return h.map(function (val) {
+                    return ('00000000' + (val >>> 0).toString(16)).slice(-8);
+                }).join('');
+            }
+
+            var loginSection = document.getElementById('loginSection');
+            var dashboardSection = document.getElementById('dashboardSection');
+            var loginForm = document.getElementById('adminLoginForm');
+            var loginUsername = document.getElementById('loginUsername');
+            var loginPassword = document.getElementById('loginPassword');
+            var togglePasswordBtn = document.getElementById('togglePasswordBtn');
+            var loginErrorAlert = document.getElementById('loginErrorAlert');
+            var loginErrorText = document.getElementById('loginErrorText');
+            var logoutBtn = document.getElementById('logoutBtn');
+
+            var addProjectForm = document.getElementById('addProjectForm');
+            var projectCategoryInput = document.getElementById('projectCategory');
+            var projectNameInput = document.getElementById('projectName');
+            var projectUrlInput = document.getElementById('projectUrl');
+            var projectDomainInput = document.getElementById('projectDomain');
+
+            var adminProjectList = document.getElementById('adminProjectList');
+            var adminSearchInput = document.getElementById('adminSearchInput');
+            var adminSearchClearBtn = document.getElementById('adminSearchClearBtn');
+            var visibleCountBadge = document.getElementById('visibleCountBadge');
+            var filterPills = document.querySelectorAll('#categoryFilterPills .admin-filter-pill');
+            var statCards = document.querySelectorAll('#statsRow .stat-card');
+
+            var exportJsonBtn = document.getElementById('exportJsonBtn');
+            var importJsonInput = document.getElementById('importJsonInput');
+            var resetDefaultBtn = document.getElementById('resetDefaultBtn');
+
+            var editModalEl = document.getElementById('editProjectModal');
+            var editModal = editModalEl && window.bootstrap ? new window.bootstrap.Modal(editModalEl) : null;
+            var editProjectForm = document.getElementById('editProjectForm');
+            var editProjectId = document.getElementById('editProjectId');
+            var editProjectCategory = document.getElementById('editProjectCategory');
+            var editProjectName = document.getElementById('editProjectName');
+            var editProjectUrl = document.getElementById('editProjectUrl');
+            var editProjectDomain = document.getElementById('editProjectDomain');
+
+            var toastEl = document.getElementById('adminToast');
+            var toastIcon = document.getElementById('adminToastIcon');
+            var toastMsg = document.getElementById('adminToastMessage');
+            var toastTimer = null;
+
+            var activeCategoryFilter = 'all';
+
+            function showToast(message, type) {
+                toastEl.className = 'admin-toast show ' + (type || 'success');
+                toastIcon.className = type === 'error'
+                    ? 'fa-solid fa-circle-exclamation text-danger'
+                    : 'fa-solid fa-circle-check text-success';
+                toastMsg.textContent = message;
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(function () {
+                    toastEl.classList.remove('show');
+                }, 3200);
+            }
+
+            function isAuthenticated() {
+                try {
+                    return window.sessionStorage.getItem(SESSION_KEY) === 'authenticated';
+                } catch (_) {
+                    return false;
+                }
+            }
+
+            function setAuthenticated(flag) {
+                try {
+                    if (flag) {
+                        window.sessionStorage.setItem(SESSION_KEY, 'authenticated');
+                    } else {
+                        window.sessionStorage.removeItem(SESSION_KEY);
+                    }
+                } catch (_) {
+                    // Ignore storage errors
+                }
+            }
+
+            function syncAuthView() {
+                if (isAuthenticated()) {
+                    loginSection.style.display = 'none';
+                    dashboardSection.style.display = 'block';
+                    renderDashboard();
+                } else {
+                    dashboardSection.style.display = 'none';
+                    loginSection.style.display = 'flex';
+                }
+            }
+
+            function setActiveCategoryFilter(category) {
+                activeCategoryFilter = category;
+                filterPills.forEach(function (pill) {
+                    pill.classList.toggle('active', pill.getAttribute('data-category') === category);
+                });
+                statCards.forEach(function (card) {
+                    card.classList.toggle('active', card.getAttribute('data-filter-category') === category);
+                });
+                renderProjectList();
+            }
+
+            function updateStats(projects) {
+                var counts = { wordpress: 0, ecommerce: 0, landing: 0, dashboard: 0 };
+                projects.forEach(function (p) {
+                    if (counts[p.category] !== undefined) {
+                        counts[p.category] += 1;
+                    }
+                });
+                document.getElementById('statAll').textContent = projects.length;
+                document.getElementById('statWordpress').textContent = counts.wordpress;
+                document.getElementById('statEcommerce').textContent = counts.ecommerce;
+                document.getElementById('statLanding').textContent = counts.landing;
+                document.getElementById('statDashboard').textContent = counts.dashboard;
+            }
+
+            function openEditModal(project) {
+                if (!editModal) return;
+                editProjectId.value = project.id;
+                editProjectCategory.value = project.category;
+                editProjectName.value = project.name;
+                editProjectUrl.value = project.url;
+                editProjectDomain.value = project.domain;
+                editModal.show();
+            }
+
+            function renderProjectList() {
+                if (!window.ProjectsStore) return;
+                var allProjects = window.ProjectsStore.getAll();
+                updateStats(allProjects);
+
+                var query = adminSearchInput.value.toLowerCase().trim();
+                if (adminSearchClearBtn) {
+                    adminSearchClearBtn.classList.toggle('visible', query.length > 0);
+                }
+                var filtered = allProjects.filter(function (p) {
+                    var matchesCategory = activeCategoryFilter === 'all' || p.category === activeCategoryFilter;
+                    if (!matchesCategory) return false;
+                    if (!query) return true;
+                    var catLabel = window.ProjectsStore.CATEGORIES[p.category].label;
+                    return (p.name + ' ' + p.domain + ' ' + p.url + ' ' + catLabel).toLowerCase().indexOf(query) !== -1;
+                });
+
+                visibleCountBadge.textContent = filtered.length + ' Showing';
+                adminProjectList.innerHTML = '';
+
+                if (filtered.length === 0) {
+                    var empty = document.createElement('div');
+                    empty.className = 'text-center py-5';
+                    empty.style.gridColumn = '1 / -1';
+                    empty.style.color = 'var(--color-gray)';
+                    empty.style.border = '1px dashed rgba(255,255,255,0.12)';
+                    empty.style.borderRadius = '14px';
+                    empty.textContent = 'No projects match the current filter.';
+                    adminProjectList.appendChild(empty);
+                    return;
+                }
+
+                var fragment = document.createDocumentFragment();
+                filtered.forEach(function (project, idx) {
+                    var catInfo = window.ProjectsStore.CATEGORIES[project.category];
+                    var row = document.createElement('div');
+                    row.className = 'admin-project-item';
+
+                    var cardTop = document.createElement('div');
+                    cardTop.className = 'admin-project-card-top';
+
+                    var badgeGroup = document.createElement('div');
+                    badgeGroup.className = 'admin-project-badge-group';
+
+                    var indexEl = document.createElement('span');
+                    indexEl.className = 'admin-project-index';
+                    indexEl.textContent = (idx + 1) < 10 ? '0' + (idx + 1) : String(idx + 1);
+
+                    var chip = document.createElement('span');
+                    chip.className = 'admin-cat-chip';
+                    chip.textContent = catInfo ? catInfo.label : project.category;
+
+                    badgeGroup.appendChild(indexEl);
+                    badgeGroup.appendChild(chip);
+
+                    var actions = document.createElement('div');
+                    actions.className = 'admin-project-actions';
+
+                    var visitBtn = document.createElement('a');
+                    visitBtn.className = 'icon-action-btn';
+                    visitBtn.href = project.url;
+                    visitBtn.target = '_blank';
+                    visitBtn.rel = 'noopener noreferrer';
+                    visitBtn.title = 'Open live project';
+                    visitBtn.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+
+                    var editBtn = document.createElement('button');
+                    editBtn.type = 'button';
+                    editBtn.className = 'icon-action-btn';
+                    editBtn.title = 'Edit project';
+                    editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+                    editBtn.addEventListener('click', function () {
+                        openEditModal(project);
+                    });
+
+                    var deleteBtn = document.createElement('button');
+                    deleteBtn.type = 'button';
+                    deleteBtn.className = 'icon-action-btn delete-btn';
+                    deleteBtn.title = 'Delete project';
+                    deleteBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
+                    deleteBtn.addEventListener('click', function () {
+                        if (window.confirm('Delete "' + project.name + '" from ' + (catInfo ? catInfo.label : project.category) + '?')) {
+                            window.ProjectsStore.deleteProject(project.id);
+                            renderProjectList();
+                            showToast('Deleted "' + project.name + '".', 'success');
+                        }
+                    });
+
+                    actions.appendChild(visitBtn);
+                    actions.appendChild(editBtn);
+                    actions.appendChild(deleteBtn);
+
+                    cardTop.appendChild(badgeGroup);
+                    cardTop.appendChild(actions);
+
+                    var metaWrap = document.createElement('div');
+                    metaWrap.className = 'admin-project-meta';
+
+                    var nameEl = document.createElement('h4');
+                    nameEl.className = 'admin-project-name';
+                    nameEl.title = project.name;
+                    nameEl.textContent = project.name;
+
+                    var urlLink = document.createElement('a');
+                    urlLink.className = 'admin-project-url';
+                    urlLink.href = project.url;
+                    urlLink.target = '_blank';
+                    urlLink.rel = 'noopener noreferrer';
+                    urlLink.title = project.url;
+
+                    var linkIcon = document.createElement('i');
+                    linkIcon.className = 'fa-solid fa-link';
+                    linkIcon.style.fontSize = '11px';
+
+                    var linkText = document.createElement('span');
+                    linkText.textContent = project.domain;
+
+                    urlLink.appendChild(linkIcon);
+                    urlLink.appendChild(linkText);
+
+                    metaWrap.appendChild(nameEl);
+                    metaWrap.appendChild(urlLink);
+
+                    row.appendChild(cardTop);
+                    row.appendChild(metaWrap);
+                    fragment.appendChild(row);
+                });
+
+                adminProjectList.appendChild(fragment);
+            }
+
+            function renderDashboard() {
+                renderProjectList();
+            }
+
+            // Login handlers
+            togglePasswordBtn.addEventListener('click', function () {
+                var isPwd = loginPassword.type === 'password';
+                loginPassword.type = isPwd ? 'text' : 'password';
+                togglePasswordBtn.innerHTML = isPwd
+                    ? '<i class="fa-regular fa-eye-slash"></i>'
+                    : '<i class="fa-regular fa-eye"></i>';
+                togglePasswordBtn.setAttribute('aria-label', isPwd ? 'Hide password' : 'Show password');
+            });
+
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var userVal = loginUsername.value.trim().toLowerCase();
+                var passVal = loginPassword.value;
+
+                if (!userVal || !passVal) {
+                    loginErrorText.textContent = 'Please enter both username and password.';
+                    loginErrorAlert.style.display = 'block';
+                    return;
+                }
+
+                var userOk = sha256Hex(userVal) === EXPECTED_USER_HASH;
+                var passOk = sha256Hex(passVal) === EXPECTED_PASS_HASH;
+
+                if (userOk && passOk) {
+                    loginErrorAlert.style.display = 'none';
+                    loginPassword.value = '';
+                    setAuthenticated(true);
+                    syncAuthView();
+                    showToast('Welcome back! Signed in as admin.', 'success');
+                } else {
+                    loginErrorText.textContent = 'Invalid username or password.';
+                    loginErrorAlert.style.display = 'block';
+                }
+            });
+
+            logoutBtn.addEventListener('click', function () {
+                setAuthenticated(false);
+                syncAuthView();
+            });
+
+            // Add project handler
+            addProjectForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                try {
+                    var created = window.ProjectsStore.addProject({
+                        category: projectCategoryInput.value,
+                        name: projectNameInput.value,
+                        url: projectUrlInput.value,
+                        domain: projectDomainInput.value
+                    });
+                    addProjectForm.reset();
+                    projectCategoryInput.value = created.category;
+                    setActiveCategoryFilter(created.category);
+                    showToast('Added "' + created.name + '" to ' + window.ProjectsStore.CATEGORIES[created.category].label + '.', 'success');
+                } catch (err) {
+                    showToast(err.message || 'Unable to add project.', 'error');
+                }
+            });
+
+            // Edit project handler
+            editProjectForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                try {
+                    var updated = window.ProjectsStore.updateProject(editProjectId.value, {
+                        category: editProjectCategory.value,
+                        name: editProjectName.value,
+                        url: editProjectUrl.value,
+                        domain: editProjectDomain.value
+                    });
+                    if (editModal) editModal.hide();
+                    renderProjectList();
+                    showToast('Updated "' + updated.name + '".', 'success');
+                } catch (err) {
+                    showToast(err.message || 'Unable to update project.', 'error');
+                }
+            });
+
+            // Filter & search handlers
+            filterPills.forEach(function (pill) {
+                pill.addEventListener('click', function () {
+                    setActiveCategoryFilter(pill.getAttribute('data-category'));
+                });
+            });
+
+            statCards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    setActiveCategoryFilter(card.getAttribute('data-filter-category'));
+                });
+            });
+
+            adminSearchInput.addEventListener('input', renderProjectList);
+
+            if (adminSearchClearBtn) {
+                adminSearchClearBtn.addEventListener('click', function () {
+                    adminSearchInput.value = '';
+                    adminSearchInput.focus();
+                    renderProjectList();
+                });
+            }
+
+            // Export / Import / Reset
+            exportJsonBtn.addEventListener('click', function () {
+                var data = window.ProjectsStore.getAll();
+                var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                var url = URL.createObjectURL(blob);
+                var link = document.createElement('a');
+                link.href = url;
+                link.download = 'portfolio-projects.json';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                showToast('Exported ' + data.length + ' projects to JSON.', 'success');
+            });
+
+            importJsonInput.addEventListener('change', function (event) {
+                var file = event.target.files && event.target.files[0];
+                if (!file) return;
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    try {
+                        var parsed = JSON.parse(e.target.result);
+                        var imported = window.ProjectsStore.importProjects(parsed);
+                        renderProjectList();
+                        showToast('Imported ' + imported.length + ' projects.', 'success');
+                    } catch (err) {
+                        showToast(err.message || 'Invalid JSON file.', 'error');
+                    } finally {
+                        importJsonInput.value = '';
+                    }
+                };
+                reader.readAsText(file);
+            });
+
+            resetDefaultBtn.addEventListener('click', function () {
+                if (window.confirm('Reset all projects back to the original 39 portfolio projects? Any added or edited projects will be replaced.')) {
+                    var defaults = window.ProjectsStore.resetDefaults();
+                    renderProjectList();
+                    showToast('Restored ' + defaults.length + ' default projects.', 'success');
+                }
+            });
+
+            if (window.ProjectsStore) {
+                window.ProjectsStore.subscribe(function () {
+                    if (isAuthenticated()) {
+                        renderProjectList();
+                    }
+                });
+            }
+
+            syncAuthView();
+        })();
+    </script>
+</body>
+
+</html>

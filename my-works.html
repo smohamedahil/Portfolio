@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore the work, projects, and portfolio of Mohamed Ahil, Web Developer specializing in custom WordPress development, WooCommerce, and responsive web solutions.">
+    <link rel="shortcut icon" type="image/png" href="assets/images/banner/ahil-logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/banner/ahil-logo.png">
+    <link rel="apple-touch-icon" href="assets/images/banner/ahil-logo.png">
+    <title>My Works - Mohamed Ahil | Web Developer</title>
+    <!-- Bootstrap min css -->
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .header-one .header-content .logo img,
+        .tmp-sidebar-area .logo img,
+        .tmp-popup-mobile-menu .logo img,
+        .single-footer-wrapper .logo img,
+        .tmp-footer-area .logo img {
+            max-width: max-content;
+            width: 237px;
+        }
+
+        /* WhatsApp float button natural styling without shadows */
+        .ready-chatting-option.tmp-ready-chat .whatsapp-float-btn {
+            background-color: #25D366 !important;
+            color: #ffffff !important;
+            box-shadow: none !important;
+            border: none !important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            transition: transform 0.3s ease;
+        }
+
+        .ready-chatting-option.tmp-ready-chat .whatsapp-float-btn:hover {
+            transform: scale(1.08);
+            box-shadow: none !important;
+        }
+
+        .ready-chatting-option.tmp-ready-chat .whatsapp-float-btn i {
+            color: #ffffff !important;
+            font-size: 28px;
+        }
+
+        /* Breadcrumb banner background and spacing */
+        .breadcrumb-bg {
+            background-image: url('assets/images/banner/breadcum-bg.png') !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .breadcrumb-area {
+            padding-top: 170px;
+            padding-bottom: 70px;
+            position: relative;
+        }
+
+        @media (max-width: 991px) {
+            .breadcrumb-area {
+                padding-top: 130px;
+                padding-bottom: 50px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .breadcrumb-area {
+                padding-top: 110px;
+                padding-bottom: 40px;
+            }
+        }
+
+        /* Active navigation indicator */
+        .tmp-mainmenu-nav .tmp-mainmenu li.active>a,
+        .tmp-mainmenu-nav .tmp-mainmenu li.current>a {
+            color: var(--color-primary) !important;
+        }
+
+        /* Portfolio Filter Tabs Styling */
+        .latest-portfolio-tabs-area {
+            position: relative;
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs {
+            border: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding: 0;
+            margin: 0 0 20px 0 !important;
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs .nav-link {
+            padding: 12px 30px;
+            border-radius: 999px;
+            color: #d0d0d0;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs .nav-link:hover {
+            color: #ffffff;
+            border-color: var(--color-primary);
+            background: rgba(255, 1, 79, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .latest-portfolio-tabs-area .nav-tabs .nav-link.active {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 6px 20px rgba(255, 1, 79, 0.38);
+            transform: translateY(-2px);
+        }
+
+        /* Equalize card image sizes uniformly */
+        .latest-portfolio-card .portfoli-card-img .img-box {
+            position: relative;
+            width: 100%;
+            height: 360px !important;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .latest-portfolio-card .portfoli-card-img .img-box a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .latest-portfolio-card .portfoli-card-img .img-box img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            border-radius: 16px !important;
+            transition: transform 0.6s ease;
+        }
+
+        .latest-portfolio-card:hover .portfoli-card-img .img-box img {
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 991px) {
+            .latest-portfolio-card .portfoli-card-img .img-box {
+                height: 300px !important;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .latest-portfolio-card .portfoli-card-img .img-box {
+                height: 220px !important;
+            }
+
+            .latest-portfolio-tabs-area .nav-tabs .nav-link {
+                padding: 9px 18px;
+                font-size: 14px;
+            }
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap .content-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .latest-portfolio-card .portfolio-card-content-wrap .tmp-arrow-icon-btn {
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .latest-portfolio-card .portfolio-card-desc {
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .latest-portfolio-card .portfolio-card-title a {
+            transition: color 0.3s ease;
+        }
+
+        .latest-portfolio-card .portfolio-card-title a:hover {
+            color: var(--color-primary);
+        }
+
+        /* WordPress Project List View Styling */
+        .project-search-bar {
+            max-width: 620px;
+            margin: 0 auto 35px auto;
+        }
+
+        .project-search-bar .search-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-search-bar .search-icon {
+            position: absolute;
+            left: 22px;
+            color: var(--color-primary);
+            font-size: 15px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .project-search-bar input {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            border-radius: 999px !important;
+            padding: 13px 120px 13px 52px !important;
+            color: #ffffff !important;
+            font-size: 15px;
+            font-family: var(--font-secondary);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .project-empty-state {
+            text-align: center;
+            padding: 48px 24px;
+            background: #141416;
+            border: 1px dashed rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 15px;
+        }
+
+        .project-empty-state i {
+            display: block;
+            font-size: 28px;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+
+        .project-search-bar input:focus {
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 22px rgba(255, 1, 79, 0.28) !important;
+            background: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        .project-search-bar input::placeholder {
+            color: #888894;
+        }
+
+        .project-search-bar .project-count-badge {
+            position: absolute;
+            right: 14px;
+            background: rgba(255, 1, 79, 0.15);
+            color: var(--color-primary);
+            border: 1px solid rgba(255, 1, 79, 0.35);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.3px;
+        }
+
+        .project-list-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: #141416;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none !important;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .project-list-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--color-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-list-card:hover {
+            background: linear-gradient(90deg, rgba(255, 1, 79, 0.10) 0%, rgba(20, 20, 24, 0.98) 100%);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -6px rgba(255, 1, 79, 0.28);
+        }
+
+        .project-list-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-list-card .project-info-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .project-list-card .project-num {
+            font-family: var(--font-primary);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-gray);
+            opacity: 0.6;
+            min-width: 24px;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .project-list-card:hover .project-num {
+            color: var(--color-primary);
+            opacity: 1;
+        }
+
+        .project-list-card .project-title-wrap {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .project-list-card .project-name {
+            color: #ffffff;
+            font-family: var(--font-primary);
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 24px;
+            margin: 0 0 3px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.3s ease;
+        }
+
+        .project-list-card:hover .project-name {
+            color: #ffffff;
+        }
+
+        .project-list-card .project-meta {
+            display: block;
+            color: var(--color-gray);
+            font-family: var(--font-secondary);
+            font-size: 13px;
+            line-height: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .project-list-card .project-arrow-wrap {
+            margin-left: 14px;
+            flex-shrink: 0;
+        }
+
+        .project-list-card .project-arrow-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .project-list-card:hover .project-arrow-btn {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #ffffff;
+            transform: rotate(45deg);
+            box-shadow: 0 0 14px rgba(255, 1, 79, 0.5);
+        }
+
+        @media (max-width: 575px) {
+            .project-list-card {
+                padding: 14px 18px;
+            }
+
+            .project-list-card .project-name {
+                font-size: 15px;
+            }
+
+            .project-list-card .project-meta {
+                font-size: 12px;
+            }
+
+            .project-search-bar input {
+                padding-right: 20px !important;
+            }
+
+            .project-search-bar .project-count-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="color-primary-2nd inner">
+
+    <!-- tpm-header-area start -->
+    <header class="tmp-header-area-start header-one header--sticky header--transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-content">
+                        <div class="logo">
+                            <a href="index.html#home">
+                                <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                                    alt="Mohamed Ahil - Web Developer">
+                                <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                                    alt="Mohamed Ahil - Web Developer">
+                            </a>
+                        </div>
+                        <nav class="tmp-mainmenu-nav d-none d-xl-block">
+                            <ul class="tmp-mainmenu nav">
+                                <li><a href="index.html#home">Home</a></li>
+                                <li><a href="index.html#about">About</a></li>
+                                <li><a href="index.html#skills">Skills</a></li>
+                                <li><a href="index.html#experience">Experience</a></li>
+                                <li><a href="index.html#education">Education</a></li>
+                                <li class="current active"><a href="my-works.html">My Works</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="tmp-header-right">
+                            <div class="social-share-wrapper d-none d-md-block">
+                                <div class="social-link">
+                                    <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="actions-area">
+                                <div class="tmp-side-collups-area d-none d-xl-block">
+                                    <button class="tmp-menu-bars tmp_button_active" aria-label="Open sidebar menu"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                                <div class="tmp-side-collups-area d-block d-xl-none">
+                                    <button class="tmp-menu-bars humberger_menu_active" aria-label="Open mobile menu"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- tpm-header-area end -->
+
+    <!-- Desktop Sidebar Slide Area -->
+    <div class="d-none d-xl-block">
+        <div class="tmp-sidebar-area tmp_side_bar">
+            <div class="inner">
+                <div class="top-area">
+                    <a href="index.html#home" class="logo">
+                        <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                            alt="Mohamed Ahil - Web Developer">
+                        <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                            alt="Mohamed Ahil - Web Developer">
+                    </a>
+                    <div class="close-icon-area">
+                        <button class="tmp-round-action-btn close_side_menu_active" aria-label="Close sidebar menu">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="short-contact-area">
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="information tmp-link-animation">
+                                <span>Call Now</span>
+                                <a href="tel:+918489389737" class="number">+91 8489389737</a>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="information tmp-link-animation">
+                                <span>Mail Me</span>
+                                <a href="mailto:smohamedahil@gmail.com" class="number">smohamedahil@gmail.com</a>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+
+                        <!-- single contact information -->
+                        <div class="single-contact">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <div class="information tmp-link-animation">
+                                <span>My Address</span>
+                                <span class="number">Chennai, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                        <!-- single contact information end -->
+                    </div>
+                    <!-- social area start -->
+                    <div class="social-wrapper mt--20">
+                        <span class="subtitle">find with me</span>
+                        <div class="social-link">
+                            <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- social area end -->
+                    <div class="sidebar-resume-btn mt--30">
+                        <a class="tmp-btn hover-icon-reverse radius-round w-100 text-center"
+                            href="assets/images/Mohamed_Ahil_Resume.pdf" download="Mohamed-Ahil-Resume.pdf"
+                            style="display: flex; justify-content: center; align-items: center;">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Download My Resume</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-down"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="overlay_close_side_menu close_side_menu_active" href="javascript:void(0);"></a>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="d-block d-xl-none">
+        <div class="tmp-popup-mobile-menu">
+            <div class="inner">
+                <div class="header-top">
+                    <div class="logo">
+                        <a href="index.html#home" class="logo-area">
+                            <img class="logo-dark" src="assets/images/banner/ahil-logo.png"
+                                alt="Mohamed Ahil - Web Developer">
+                            <img class="logo-white" src="assets/images/banner/ahil-logo.png"
+                                alt="Mohamed Ahil - Web Developer">
+                        </a>
+                    </div>
+                    <div class="close-menu">
+                        <button class="close-button tmp-round-action-btn" aria-label="Close mobile menu">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="tmp-mainmenu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li class="active"><a href="my-works.html">My Works</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <div class="social-wrapper mt--40">
+                    <span class="subtitle">find with me</span>
+                    <div class="social-link">
+                        <a href="https://in.linkedin.com/in/mohamed-ahil1" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- social area end -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area breadcrumb-bg" style="background-image: url('assets/images/banner/breadcum-bg.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner text-center">
+                        <h1 class="title split-collab">My Works</h1>
+                        <ul class="page-list">
+                            <li class="tmp-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
+                            <li class="tmp-breadcrumb-item active">My Works</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+
+    <!-- Start Portfolio Tab Section -->
+    <section class="latest-portfolio-area custom-column-grid tmp-section-gapBottom pt--60">
+        <div class="container">
+            <div class="latest-portfolio-tabs-area">
+                <nav class="d-flex justify-content-center">
+                    <ul class="nav nav-tabs" id="portfolioTab" role="tablist">
+                        <li role="presentation">
+                            <button class="nav-link active" id="wordpress-tab" data-bs-toggle="tab"
+                                data-bs-target="#wordpress-pane" type="button" role="tab" aria-controls="wordpress-pane"
+                                aria-selected="true">Wordpress Websites</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="nav-link" id="ecommerce-tab" data-bs-toggle="tab"
+                                data-bs-target="#ecommerce-pane" type="button" role="tab" aria-controls="ecommerce-pane"
+                                aria-selected="false">E-commerce</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="nav-link" id="landing-tab" data-bs-toggle="tab"
+                                data-bs-target="#landing-pane" type="button" role="tab" aria-controls="landing-pane"
+                                aria-selected="false">Landing Page</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab"
+                                data-bs-target="#dashboard-pane" type="button" role="tab" aria-controls="dashboard-pane"
+                                aria-selected="false">Dashboard UI</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="tab-content" id="portfolioTabContent">
+                    <!-- Tab 1: Wordpress Website (Dynamic List View) -->
+                    <div class="tab-pane fade show active" id="wordpress-pane" role="tabpanel"
+                        aria-labelledby="wordpress-tab" tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="projectSearchInput"
+                                    placeholder="Search WordPress projects by name or domain..." class="form-control"
+                                    autocomplete="off">
+                                <span class="project-count-badge" id="wordpressCountBadge">0 Projects</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Projects List View Grid -->
+                        <div class="row g-3" id="wordpressProjectList"></div>
+                    </div>
+
+                    <!-- Tab 2: E-commerce (Dynamic List View) -->
+                    <div class="tab-pane fade" id="ecommerce-pane" role="tabpanel" aria-labelledby="ecommerce-tab"
+                        tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="ecommerceSearchInput"
+                                    placeholder="Search eCommerce projects by name or domain..." class="form-control"
+                                    autocomplete="off">
+                                <span class="project-count-badge" id="ecommerceCountBadge">0 Projects</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Projects List View Grid -->
+                        <div class="row g-3" id="ecommerceProjectList"></div>
+                    </div>
+
+                    <!-- Tab 3: Landing Page (Dynamic List View) -->
+                    <div class="tab-pane fade" id="landing-pane" role="tabpanel" aria-labelledby="landing-tab"
+                        tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="landingSearchInput"
+                                    placeholder="Search Landing Pages by name or domain..." class="form-control"
+                                    autocomplete="off">
+                                <span class="project-count-badge" id="landingCountBadge">0 Projects</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Projects List View Grid -->
+                        <div class="row g-3" id="landingProjectList"></div>
+                    </div>
+
+                    <!-- Tab 4: Dashboard UI (Dynamic List View) -->
+                    <div class="tab-pane fade" id="dashboard-pane" role="tabpanel" aria-labelledby="dashboard-tab"
+                        tabindex="0">
+
+                        <!-- Live Search Bar -->
+                        <div class="project-search-bar">
+                            <div class="search-input-wrap">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="dashboardSearchInput"
+                                    placeholder="Search Dashboard UI projects by name or domain..." class="form-control"
+                                    autocomplete="off">
+                                <span class="project-count-badge" id="dashboardCountBadge">0 Projects</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Projects List View Grid -->
+                        <div class="row g-3" id="dashboardProjectList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio Tab Section -->
+
+    <!-- Start Footer Area -->
+    <footer class="tmp-footer-area footer-style-4" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-area text-center">
+                        <div class="logo">
+                            <a href="index.html#home">
+                                <img src="assets/images/banner/ahil-logo.png" alt="Mohamed Ahil - Web Developer">
+                            </a>
+                        </div>
+                        <p class="description mt--30 mb--30">©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            . All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <!-- WhatsApp floating chat button -->
+    <div class="ready-chatting-option tmp-ready-chat">
+        <a class="whatsapp-float-btn" href="https://wa.me/918489389737" target="_blank" rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- WhatsApp floating chat button end -->
+
+    <!-- Scroll to top progress area start -->
+    <div class="scrollToTop" style="display: block;">
+        <div class="arrowUp">
+            <i class="fa-light fa-arrow-up"></i>
+        </div>
+        <div class="water" style="transform: translate(0px, 87%);">
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 560 20" style="display: none;">
+                <symbol id="wave">
+                    <path
+                        d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"
+                        fill="#"></path>
+                </symbol>
+            </svg>
+        </div>
+    </div>
+    <!-- Scroll to top progress area end -->
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/plugins/odometer.js"></script>
+    <script src="assets/js/vendor/appear.js"></script>
+    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/plugins/gsap.js"></script>
+    <script src="assets/js/plugins/splittext.js"></script>
+    <script src="assets/js/plugins/scrolltigger.js"></script>
+    <script src="assets/js/plugins/scrolltoplugins.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/animation.js"></script>
+    <script src="assets/js/vendor/backtop.js"></script>
+    <script src="assets/js/plugins/text-type.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/projects-store.js"></script>
+
+    <!-- Dynamic Portfolio Renderer & Live Search Script -->
+    <script>
+            (function () {
+                if (!window.ProjectsStore) return;
+
+                var CATEGORIES = window.ProjectsStore.CATEGORIES;
+
+                function formatIndex(num) {
+                    return num < 10 ? '0' + num : String(num);
+                }
+
+                function buildProjectCard(project, index, categoryConfig) {
+                    var col = document.createElement('div');
+                    col.className = 'col-lg-6 col-12 ' + categoryConfig.colClass;
+
+                    var link = document.createElement('a');
+                    link.href = project.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.className = 'project-list-card';
+
+                    var infoWrap = document.createElement('div');
+                    infoWrap.className = 'project-info-wrap';
+
+                    var numSpan = document.createElement('span');
+                    numSpan.className = 'project-num';
+                    numSpan.textContent = formatIndex(index + 1);
+
+                    var titleWrap = document.createElement('div');
+                    titleWrap.className = 'project-title-wrap';
+
+                    var titleEl = document.createElement('h4');
+                    titleEl.className = 'project-name';
+                    titleEl.textContent = project.name;
+
+                    var metaEl = document.createElement('span');
+                    metaEl.className = 'project-meta';
+                    metaEl.textContent = categoryConfig.metaLabel + ' \u2022 ' + project.domain;
+
+                    titleWrap.appendChild(titleEl);
+                    titleWrap.appendChild(metaEl);
+
+                    infoWrap.appendChild(numSpan);
+                    infoWrap.appendChild(titleWrap);
+
+                    var arrowWrap = document.createElement('div');
+                    arrowWrap.className = 'project-arrow-wrap';
+
+                    var arrowBtn = document.createElement('span');
+                    arrowBtn.className = 'project-arrow-btn';
+                    arrowBtn.setAttribute('aria-label', 'Redirect to ' + project.name);
+
+                    var arrowIcon = document.createElement('i');
+                    arrowIcon.className = 'fa-solid fa-arrow-up-right';
+                    arrowBtn.appendChild(arrowIcon);
+                    arrowWrap.appendChild(arrowBtn);
+
+                    link.appendChild(infoWrap);
+                    link.appendChild(arrowWrap);
+                    col.appendChild(link);
+
+                    return col;
+                }
+
+                function buildEmptyState(message) {
+                    var col = document.createElement('div');
+                    col.className = 'col-12';
+
+                    var box = document.createElement('div');
+                    box.className = 'project-empty-state';
+
+                    var icon = document.createElement('i');
+                    icon.className = 'fa-regular fa-folder-open';
+
+                    var text = document.createElement('span');
+                    text.textContent = message;
+
+                    box.appendChild(icon);
+                    box.appendChild(text);
+                    col.appendChild(box);
+                    return col;
+                }
+
+                function renderCategory(categoryKey) {
+                    var config = CATEGORIES[categoryKey];
+                    if (!config) return;
+
+                    var listEl = document.getElementById(config.listId);
+                    var searchInput = document.getElementById(config.searchInputId);
+                    var countBadge = document.getElementById(categoryKey + 'CountBadge');
+                    if (!listEl) return;
+
+                    var allItems = window.ProjectsStore.getByCategory(categoryKey);
+                    var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+                    var filtered = allItems.filter(function (item) {
+                        if (!query) return true;
+                        var searchable = (item.name + ' ' + item.domain + ' ' + config.metaLabel).toLowerCase();
+                        return searchable.indexOf(query) !== -1;
+                    });
+
+                    if (countBadge) {
+                        countBadge.textContent = filtered.length + (filtered.length === 1 ? ' Project' : ' Projects');
+                    }
+
+                    listEl.innerHTML = '';
+
+                    if (filtered.length === 0) {
+                        var msg = allItems.length === 0
+                            ? 'No projects added in ' + config.label + ' yet.'
+                            : 'No matching projects found for "' + (searchInput ? searchInput.value.trim() : '') + '".';
+                        listEl.appendChild(buildEmptyState(msg));
+                        return;
+                    }
+
+                    var fragment = document.createDocumentFragment();
+                    filtered.forEach(function (project, idx) {
+                        fragment.appendChild(buildProjectCard(project, idx, config));
+                    });
+                    listEl.appendChild(fragment);
+                }
+
+                function renderAll() {
+                    Object.keys(CATEGORIES).forEach(renderCategory);
+                }
+
+                Object.keys(CATEGORIES).forEach(function (categoryKey) {
+                    var config = CATEGORIES[categoryKey];
+                    var searchInput = document.getElementById(config.searchInputId);
+                    if (searchInput) {
+                        searchInput.addEventListener('input', function () {
+                            renderCategory(categoryKey);
+                        });
+                    }
+                });
+
+                renderAll();
+                window.ProjectsStore.subscribe(renderAll);
+            })();
+    </script>
+
+</body>
+
+</html>
